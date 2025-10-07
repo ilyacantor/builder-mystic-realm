@@ -1,13 +1,14 @@
 import { useState } from "react";
-import { Menu, Sparkles, X } from "lucide-react";
+import { Bike, Menu, X } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 
 const NAV_ITEMS = [
-  { label: "Overview", href: "#overview" },
-  { label: "Features", href: "#features" },
-  { label: "Workflow", href: "#workflow" },
-  { label: "Insights", href: "#insights" },
+  { label: "Home", href: "#home" },
+  { label: "Guest Persona", href: "#persona" },
+  { label: "Dashboard", href: "#dashboard" },
+  { label: "Community", href: "#community" },
+  { label: "Profile", href: "#profile" },
 ];
 
 export const SiteHeader = () => {
@@ -16,29 +17,29 @@ export const SiteHeader = () => {
   const closeMenu = () => setOpen(false);
 
   return (
-    <header className="sticky top-0 z-50 border-b border-white/10 bg-background/70 backdrop-blur-xl">
-      <div className="container flex h-16 items-center justify-between gap-6">
+    <header className="sticky top-0 z-50 border-b border-white/5 bg-background/80 backdrop-blur-xl">
+      <div className="container flex h-20 items-center justify-between gap-6">
         <a
-          href="/#overview"
-          className="group flex items-center gap-3 text-sm font-semibold uppercase tracking-[0.4em] text-foreground/70"
+          href="/#home"
+          className="group flex items-center gap-3 text-sm font-semibold uppercase tracking-[0.5em] text-foreground/70"
           onClick={closeMenu}
         >
-          <span className="rounded-full bg-primary/20 p-2 text-primary shadow-glow transition duration-300 group-hover:bg-primary/30 group-hover:text-primary-foreground">
-            <Sparkles className="size-4" />
+          <span className="rounded-full bg-gradient-to-br from-primary/20 via-primary/40 to-primary/20 p-2 text-primary shadow-[0_10px_40px_-20px_rgba(0,188,212,0.9)] transition duration-300 group-hover:scale-105 group-hover:from-primary/30 group-hover:via-primary/50">
+            <Bike className="size-4" />
           </span>
-          <span className="font-display text-lg tracking-tight normal-case text-foreground">
-            Model Canvas
+          <span className="font-display text-xl tracking-[0.08em] text-white">
+            FlowNation
           </span>
         </a>
-        <nav className="hidden items-center gap-8 text-sm font-medium text-foreground/70 lg:flex">
+        <nav className="hidden items-center gap-8 text-sm font-medium text-foreground/80 lg:flex">
           {NAV_ITEMS.map((item) => (
             <a
               key={item.href}
               href={item.href}
-              className="group relative transition-colors hover:text-foreground"
+              className="group relative transition-colors hover:text-white"
             >
               {item.label}
-              <span className="absolute inset-x-0 -bottom-1 h-px scale-x-0 bg-gradient-to-r from-primary/70 via-accent/70 to-primary/70 transition-transform duration-300 group-hover:scale-x-100" />
+              <span className="absolute inset-x-0 -bottom-1 h-0.5 scale-x-0 bg-gradient-to-r from-primary via-accent to-primary transition-transform duration-300 group-hover:scale-x-100" />
             </a>
           ))}
         </nav>
@@ -47,33 +48,23 @@ export const SiteHeader = () => {
             asChild
             variant="ghost"
             size="sm"
-            className="border border-white/10 bg-white/5 text-xs uppercase tracking-[0.3em] text-foreground/70 transition hover:bg-white/10 hover:text-foreground"
+            className="border border-white/10 bg-secondary/40 px-5 text-xs uppercase tracking-[0.35em] text-foreground/70 transition hover:border-primary/60 hover:bg-primary/10 hover:text-white"
           >
-            <a href="/#insights">Docs</a>
+            <a href="mailto:hello@flownation.app">Login</a>
           </Button>
           <Button
             asChild
             size="sm"
-            className="bg-gradient-to-r from-primary via-accent to-primary text-primary-foreground shadow-glow transition hover:from-primary/90 hover:via-accent/90 hover:to-primary/90"
+            className="bg-primary px-6 text-xs font-semibold uppercase tracking-[0.3em] text-primary-foreground shadow-[0_20px_40px_-24px_rgba(0,188,212,0.8)] transition hover:bg-primary/90"
           >
-            <a href="/#cta">Launch Studio</a>
+            <a href="#cta">Sign Up</a>
           </Button>
         </div>
         <div className="flex items-center gap-3 lg:hidden">
           <Button
-            asChild
-            variant="ghost"
-            size="sm"
-            className="border border-white/10 bg-white/5 text-xs uppercase tracking-[0.3em] text-foreground/70 transition hover:bg-white/10 hover:text-foreground"
-          >
-            <a href="/#insights" onClick={closeMenu}>
-              Docs
-            </a>
-          </Button>
-          <Button
             variant="ghost"
             size="icon"
-            className="border border-white/10 bg-white/5 text-foreground hover:bg-white/10"
+            className="border border-white/10 bg-secondary/40 text-white hover:bg-secondary/60"
             onClick={() => setOpen((prev) => !prev)}
             aria-label={open ? "Close navigation" : "Open navigation"}
           >
@@ -82,26 +73,35 @@ export const SiteHeader = () => {
         </div>
       </div>
       {open ? (
-        <div className="border-t border-white/10 bg-background/90 backdrop-blur-xl lg:hidden">
+        <div className="border-t border-white/5 bg-background/90 backdrop-blur-xl lg:hidden">
           <div className="container flex flex-col gap-4 py-6">
             {NAV_ITEMS.map((item) => (
               <a
                 key={item.href}
                 href={item.href}
-                className="text-base font-medium text-foreground/80 transition hover:text-foreground"
+                className="text-base font-medium text-foreground/80 transition hover:text-white"
                 onClick={closeMenu}
               >
                 {item.label}
               </a>
             ))}
-            <Button
-              asChild
-              className="bg-gradient-to-r from-primary via-accent to-primary text-primary-foreground shadow-glow transition hover:from-primary/90 hover:via-accent/90 hover:to-primary/90"
-            >
-              <a href="/#cta" onClick={closeMenu}>
-                Launch Studio
-              </a>
-            </Button>
+            <div className="flex flex-col gap-3">
+              <Button
+                asChild
+                variant="ghost"
+                className="border border-white/10 bg-secondary/40 text-sm uppercase tracking-[0.3em] text-foreground/70 transition hover:border-primary/60 hover:bg-primary/10 hover:text-white"
+                onClick={closeMenu}
+              >
+                <a href="mailto:hello@flownation.app">Login</a>
+              </Button>
+              <Button
+                asChild
+                className="bg-primary text-sm uppercase tracking-[0.3em] text-primary-foreground"
+                onClick={closeMenu}
+              >
+                <a href="#cta">Sign Up</a>
+              </Button>
+            </div>
           </div>
         </div>
       ) : null}
