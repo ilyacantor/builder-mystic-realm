@@ -1,3 +1,5 @@
+import { FlowNationShell } from "@/components/layout/flownation-shell";
+
 const metrics = [
   { label: "Functional Threshold Power", value: "285W" },
   { label: "Average Speed", value: "28.5 km/h" },
@@ -56,8 +58,6 @@ const badges = [
   "Consistent Climber",
   "Marathon Finisher",
 ];
-
-import { FlowNationShell } from "@/components/layout/flownation-shell";
 
 export default function DashboardInsights() {
   return (
