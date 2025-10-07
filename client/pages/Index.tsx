@@ -4,7 +4,7 @@ import {
   CheckCircle2,
   Mail,
   MessageCircle,
-  SliderHorizontal,
+  SlidersHorizontal,
 } from "lucide-react";
 
 const colorTokens = [
@@ -248,7 +248,7 @@ export default function Index() {
               variant="ghost"
               className="rounded-full border border-white/10 bg-transparent px-6 text-xs font-semibold uppercase tracking-[0.35em] text-foreground/70 hover:border-primary/40 hover:text-white"
             >
-              <SliderHorizontal className="mr-2 size-4" /> View guidelines
+              <SlidersHorizontal className="mr-2 size-4" /> View guidelines
             </Button>
           </div>
         </div>
