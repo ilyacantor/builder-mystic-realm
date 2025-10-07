@@ -1,468 +1,606 @@
 import { SiteLayout } from "@/components/layout/site-layout";
 import { Button } from "@/components/ui/button";
 import {
+  Award,
   ArrowRight,
   BarChart3,
-  Component,
-  Cpu,
-  Database,
-  Layers,
-  LineChart,
-  Rocket,
-  ShieldCheck,
-  SlidersHorizontal,
-  Sparkles,
-  Timer,
+  Bike,
+  Calendar,
+  Flame,
+  Globe,
+  HeartPulse,
+  MapPinned,
+  MessageCircle,
+  Settings2,
+  Users,
+  Zap,
 } from "lucide-react";
 
-const featureCards = [
+const featureHighlights = [
   {
-    title: "Adaptive Architectures",
-    description:
-      "Compose transformer blocks, graph networks, and custom layers in a unified visual canvas.",
-    highlight: "Auto-layer suggestions",
-    icon: Cpu,
+    title: "Road Cycling",
+    description: "Conquer epic climbs with curated elevation-rich routes and pacing insights.",
+    icon: Bike,
+    accent: "Power focus",
   },
   {
-    title: "Data Rituals",
-    description:
-      "Cleanse, balance, and augment datasets with smart recipes that remember your preferences.",
-    highlight: "Versioned data flows",
-    icon: Database,
+    title: "Gravel Adventures",
+    description: "Navigate technical trails with surface-aware guidance and gear intel.",
+    icon: MapPinned,
+    accent: "Trail tested",
   },
   {
-    title: "Guardrails Built In",
-    description:
-      "Automate governance with realtime bias detection, explainability reports, and approval workflows.",
-    highlight: "Responsible by design",
-    icon: ShieldCheck,
+    title: "Triathlon",
+    description: "Balance swim, ride, and run blocks with adaptive recovery scheduling.",
+    icon: HeartPulse,
+    accent: "3-discipline sync",
   },
   {
-    title: "Deploy Anywhere",
-    description:
-      "Ship to edge devices, cloud endpoints, or your favorite MLOps stack with a single push.",
-    highlight: "Zero-downtime releases",
-    icon: Rocket,
+    title: "Run Club",
+    description: "Dial in tempo sessions and connect with pacers nearby for every distance.",
+    icon: Flame,
+    accent: "Tempo ready",
   },
 ];
 
-const workflow = [
+const personaStories = [
   {
-    step: "01",
-    title: "Model Blueprint",
-    description:
-      "Start from curated templates or sketch your own architecture with drag-and-drop precision.",
+    name: "Endurance Maverick",
+    summary: "Custom blocks for long-course athletes balancing work, travel, and podium goals.",
+    stats: "Avg 210 km weekly • FTP 285W",
   },
   {
-    step: "02",
-    title: "Training Playground",
-    description:
-      "Run multiple experiments in parallel, compare metrics, and promote the best performing candidate.",
+    name: "Gravel Seeker",
+    summary: "Route discovery with terrain filters, nutrition reminders, and gear pairing.",
+    stats: "60% off-road • 8 events booked",
   },
   {
-    step: "03",
-    title: "Continuous Delivery",
-    description:
-      "Automate evaluation pipelines, route traffic, and monitor live signals from a single dashboard.",
+    name: "Multi-Sport Maestro",
+    summary: "Structured tri plans synced across pools, tracks, and Zwift, all in one hub.",
+    stats: "3 disciplines • 5 integrations",
   },
 ];
 
-const trainingMetrics = [
-  { label: "Accuracy", value: "98.6%", trend: "+4.2%", positive: true },
-  { label: "Latency", value: "42 ms", trend: "-8 ms", positive: true },
-  { label: "Drift", value: "0.6%", trend: "-1.1%", positive: true },
+const dashboardMetrics = [
+  { label: "Functional Threshold Power", value: "285W" },
+  { label: "Average Speed", value: "28.5 km/h" },
+  { label: "Rides Completed", value: "124" },
 ];
 
-const diagnostics = [
-  { label: "Precision", value: 93 },
-  { label: "Recall", value: 96 },
-  { label: "F1 Score", value: 94 },
+const performanceTrends = [
+  { label: "Mileage", value: "180 km" },
+  { label: "Elevation", value: "5,420 m" },
+  { label: "Training Load", value: "Moderate" },
 ];
 
-const configOptions = [
+const communityMembers = [
   {
-    label: "Optimizer",
-    value: "AdamW",
+    name: "Alex 'The Pacer' Smith",
+    rides: "124 Rides",
+    speed: "28.3 km/h Avg",
+    events: "7 Events Together",
   },
   {
-    label: "Learning Rate",
-    value: "2e-4",
+    name: "Sarah 'Trailblazer' Lee",
+    rides: "89 Rides",
+    speed: "22.1 km/h Avg",
+    events: "5 Events Together",
   },
   {
-    label: "Warmup",
-    value: "1,500 steps",
+    name: "Mike 'Powerhouse' Chen",
+    rides: "155 Rides",
+    speed: "30.2 km/h Avg",
+    events: "11 Events Together",
   },
   {
-    label: "Regularization",
-    value: "Dropout 0.15",
+    name: "Emily 'Speedy' White",
+    rides: "98 Rides",
+    speed: "27.8 km/h Avg",
+    events: "8 Events Together",
   },
+  {
+    name: "David 'Enduro' Brown",
+    rides: "110 Rides",
+    speed: "25.3 km/h Avg",
+    events: "6 Events Together",
+  },
+  {
+    name: "Jessica 'Summit' Green",
+    rides: "72 Rides",
+    speed: "19.8 km/h Avg",
+    events: "2 Events Together",
+  },
+];
+
+const recommendedPartners = [
+  {
+    name: "Sophia 'Sprinter' King",
+    rides: "55 Rides • 24 km/h avg",
+  },
+  {
+    name: "Lucas 'Climber' Hall",
+    rides: "80 Rides • 15.2 km/h avg",
+  },
+  {
+    name: "Mia 'Zen' Kim",
+    rides: "30 Rides • 19.8 km/h avg",
+  },
+];
+
+const recentChats = [
+  {
+    name: "Alex Smith",
+    message: "Hey, thinking about that long ride next weekend. You in?",
+  },
+  {
+    name: "Sarah Lee",
+    message: "Finished my marathon prep run! Feeling strong.",
+  },
+  {
+    name: "Mike Chen",
+    message: "Anyone doing the coastal triathlon this year?",
+  },
+];
+
+const upcomingRides = [
+  {
+    title: "Sunday Morning Gravel Grind",
+    date: "Sun, Oct 27",
+    distance: "60 km",
+    riders: "8 Riders",
+  },
+  {
+    title: "Wednesday Evening Hill Repeats",
+    date: "Wed, Oct 30",
+    distance: "25 km",
+    riders: "5 Riders",
+  },
+];
+
+const profilePreferences = [
+  { label: "Dark Mode", value: "Enabled" },
+  { label: "Make Profile Public", value: "Enabled" },
+  { label: "Email Notifications", value: "Paused" },
 ];
 
 export default function Index() {
   return (
     <SiteLayout>
-      <div className="relative isolate overflow-hidden">
-        <div className="absolute inset-x-0 top-0 -z-10 h-[520px] bg-hero-grid opacity-70 md:h-[640px]" />
-        <div className="absolute inset-x-0 top-0 -z-10 h-[520px] bg-mesh" />
-
-        <section
-          id="overview"
-          className="container relative space-y-16 pb-24 pt-20 sm:pt-24 lg:space-y-20 lg:pb-28 lg:pt-32"
-        >
-          <div className="grid gap-16 lg:grid-cols-[minmax(0,1fr)_minmax(0,0.95fr)] lg:items-center">
+      <div className="space-y-28">
+        <section id="home" className="relative overflow-hidden">
+          <div className="absolute inset-0 -z-10 bg-hero-gradient opacity-70" />
+          <div className="container grid gap-16 pb-24 pt-16 lg:grid-cols-[minmax(0,1.05fr)_minmax(0,0.95fr)] lg:items-center">
             <div className="space-y-10">
-              <span className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.45em] text-foreground/60">
-                <Sparkles className="size-3.5 text-primary" />
-                Create Model
+              <span className="inline-flex items-center gap-2 rounded-full bg-primary/20 px-4 py-1 text-xs font-semibold uppercase tracking-[0.35em] text-primary-foreground/80">
+                FlowNation Community
               </span>
               <div className="space-y-6">
-                <h1 className="font-display text-4xl leading-tight text-balance text-white sm:text-5xl lg:text-6xl">
-                  Create model experiences that feel bespoke—and deploy them in minutes.
+                <h1 className="font-display text-4xl leading-tight text-white sm:text-5xl lg:text-6xl">
+                  A thriving athletic universe powered by connection, data, and grit.
                 </h1>
-                <p className="max-w-xl text-lg text-foreground/80 sm:text-xl">
-                  Model Canvas orchestrates the entire lifecycle from dataset ingestion to deployment-ready endpoints. Sketch ideas, tune parameters, and launch a production-grade model without leaving the page.
+                <p className="max-w-xl text-lg text-foreground/75 sm:text-xl">
+                  Join cyclists, runners, triathletes, and explorers switching between training, events, and community moments without leaving the FlowNation canvas.
                 </p>
               </div>
               <div className="flex flex-col gap-4 sm:flex-row sm:items-center">
                 <Button
-                  type="button"
                   size="lg"
-                  className="bg-gradient-to-r from-primary via-accent to-primary text-base text-primary-foreground shadow-glow transition hover:from-primary/90 hover:via-accent/90 hover:to-primary/90"
+                  className="bg-primary px-7 text-base font-semibold text-primary-foreground shadow-[0_32px_70px_-30px_rgba(0,188,212,0.85)] transition hover:bg-primary/90"
                 >
-                  Launch Model Builder
+                  Start Your Journey
                   <ArrowRight className="size-4" />
                 </Button>
                 <Button
                   asChild
                   variant="ghost"
                   size="lg"
-                  className="border border-white/10 bg-white/5 text-base text-foreground/80 transition hover:bg-white/10 hover:text-foreground"
+                  className="border border-white/10 bg-secondary/60 text-base text-foreground/80 transition hover:border-primary/40 hover:bg-primary/10 hover:text-white"
                 >
-                  <a href="/#insights">View Documentation</a>
+                  <a href="#community">Discover Riders</a>
                 </Button>
               </div>
-              <div className="flex flex-wrap items-center gap-8 text-sm text-foreground/60">
-                <div className="space-y-1">
-                  <p className="font-medium text-foreground/70">Trusted by teams shipping AI safely</p>
-                  <div className="flex items-center gap-6 text-xs uppercase tracking-[0.4em] text-foreground/40">
-                    <span>NovaLabs</span>
-                    <span>Helios</span>
-                    <span>Beacon</span>
-                    <span>Voyant</span>
-                  </div>
+              <div className="grid gap-6 text-sm text-foreground/70 sm:grid-cols-3">
+                <div>
+                  <p className="text-2xl font-bold text-white">4,125+</p>
+                  <p className="uppercase tracking-[0.35em] text-foreground/50">Community members</p>
+                </div>
+                <div>
+                  <p className="text-2xl font-bold text-white">8,335+</p>
+                  <p className="uppercase tracking-[0.35em] text-foreground/50">Challenges completed</p>
+                </div>
+                <div>
+                  <p className="text-2xl font-bold text-white">60+</p>
+                  <p className="uppercase tracking-[0.35em] text-foreground/50">Events this season</p>
                 </div>
               </div>
             </div>
-            <div className="relative">
-              <div className="absolute -left-10 -top-14 h-44 w-44 rounded-full bg-primary/20 blur-3xl" />
-              <div className="absolute -right-8 bottom-6 h-36 w-36 rounded-full bg-accent/20 blur-[120px]" />
-              <div className="relative overflow-hidden rounded-3xl border border-white/10 bg-white/5 p-6 shadow-glow backdrop-blur-xl">
-                <div className="flex items-center justify-between text-xs text-foreground/60">
-                  <span className="inline-flex items-center gap-2 rounded-full bg-background/80 px-3 py-1 font-medium text-foreground/70">
-                    <Layers className="size-3" />
-                    Transformer · Hybrid
-                  </span>
-                  <span>Version 7 • Live</span>
+            <div className="relative flex flex-col gap-6 rounded-[32px] border border-white/10 bg-secondary/80 p-8 shadow-card-soft backdrop-blur-xl">
+              <div className="flex items-center justify-between">
+                <div className="space-y-1">
+                  <p className="text-xs uppercase tracking-[0.35em] text-foreground/50">Today&apos;s Focus</p>
+                  <p className="text-lg font-semibold text-white">Endurance + Strength</p>
                 </div>
-                <div className="mt-6 grid gap-5">
-                  <div className="rounded-2xl border border-white/10 bg-background/80 p-4">
-                    <p className="text-sm font-medium text-foreground/70">Architecture preview</p>
-                    <div className="mt-4 grid grid-cols-3 gap-3 text-xs">
-                      {["Embedding", "Attention", "Graph"].map((label) => (
-                        <div
-                          key={label}
-                          className="flex flex-col gap-1 rounded-xl border border-white/5 bg-white/5 px-3 py-2 text-foreground/70"
-                        >
-                          <span className="text-[10px] uppercase tracking-[0.35em] text-foreground/40">
-                            Layer
-                          </span>
-                          <span className="font-medium text-foreground/80">{label}</span>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                  <div className="rounded-2xl border border-white/10 bg-background/80 p-4">
-                    <p className="text-sm font-medium text-foreground/70">Training metrics</p>
-                    <div className="mt-3 grid gap-3">
-                      {trainingMetrics.map((metric) => (
-                        <div
-                          key={metric.label}
-                          className="flex items-center justify-between rounded-xl border border-white/5 bg-white/5 px-3 py-2 text-sm"
-                        >
-                          <span className="text-foreground/60">{metric.label}</span>
-                          <div className="flex items-center gap-3 font-semibold text-foreground">
-                            <span>{metric.value}</span>
-                            <span
-                              className={metric.positive ? "text-emerald-300" : "text-destructive"}
-                            >
-                              {metric.trend}
-                            </span>
-                          </div>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                </div>
-                <div className="mt-6 flex items-center justify-between rounded-2xl border border-white/10 bg-background/70 p-4 text-sm">
-                  <div>
-                    <p className="text-foreground/60">Training window</p>
-                    <p className="text-lg font-semibold text-foreground">Session 34B · Auto-scaling</p>
-                  </div>
-                  <div className="flex items-center gap-2 rounded-full bg-white/10 px-4 py-1.5 text-xs uppercase tracking-[0.3em] text-foreground/70">
-                    <Timer className="size-3.5" />
-                    12m left
-                  </div>
+                <div className="rounded-full bg-primary/15 px-3 py-1 text-xs font-semibold uppercase tracking-[0.35em] text-primary-foreground/80">
+                  Balanced
                 </div>
               </div>
-              <div className="absolute -bottom-10 left-1/2 w-full max-w-[260px] -translate-x-1/2 rounded-3xl border border-white/10 bg-background/90 p-5 shadow-soft backdrop-blur-xl">
-                <p className="text-xs font-semibold uppercase tracking-[0.4em] text-foreground/40">
-                  Dataset snapshot
+              <div className="grid gap-4">
+                {dashboardMetrics.map((metric) => (
+                  <div
+                    key={metric.label}
+                    className="rounded-2xl border border-white/10 bg-background/70 px-5 py-4 text-sm text-foreground/70"
+                  >
+                    <p className="text-foreground/50">{metric.label}</p>
+                    <p className="text-xl font-semibold text-white">{metric.value}</p>
+                  </div>
+                ))}
+              </div>
+              <div className="rounded-3xl border border-white/10 bg-background/70 p-5">
+                <p className="flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.35em] text-foreground/50">
+                  <BarChart3 className="size-4 text-primary" /> Weekly Outlook
                 </p>
-                <div className="mt-3 space-y-2 text-sm text-foreground/70">
-                  <div className="flex items-center justify-between">
-                    <span>Rows</span>
-                    <span className="font-semibold text-foreground">2.4M</span>
-                  </div>
-                  <div className="flex items-center justify-between">
-                    <span>Features</span>
-                    <span className="font-semibold text-foreground">182</span>
-                  </div>
-                  <div className="flex items-center justify-between">
-                    <span>Freshness</span>
-                    <span className="font-semibold text-emerald-300">Real-time</span>
-                  </div>
+                <div className="mt-4 grid gap-3 text-sm text-foreground/70">
+                  {performanceTrends.map((trend) => (
+                    <div key={trend.label} className="flex items-center justify-between">
+                      <span>{trend.label}</span>
+                      <span className="font-semibold text-white">{trend.value}</span>
+                    </div>
+                  ))}
+                </div>
+                <div className="mt-4 h-2.5 overflow-hidden rounded-full bg-white/10">
+                  <div className="h-full w-3/4 animate-shimmer bg-gradient-to-r from-primary via-accent to-primary" />
                 </div>
               </div>
             </div>
           </div>
         </section>
 
-        <section id="features" className="container relative pb-24 lg:pb-28">
-          <div className="mb-12 flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
-            <div className="max-w-xl space-y-4">
-              <h2 className="font-display text-3xl text-balance text-white sm:text-4xl">
-                Built for builders, scaled for entire organizations.
+        <section id="persona" className="container space-y-12">
+          <div className="flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
+            <div>
+              <p className="text-sm uppercase tracking-[0.4em] text-primary/80">Guest Persona</p>
+              <h2 className="mt-2 font-display text-3xl text-white sm:text-4xl">
+                FlowNation adapts to every discipline, schedule, and ambition.
               </h2>
-              <p className="text-base text-foreground/70 sm:text-lg">
-                Every interaction in Model Canvas is orchestrated for high-velocity teams. From dataset lineage to post-deployment guardrails, every pixel accelerates collaboration.
+              <p className="mt-4 max-w-2xl text-base text-foreground/70">
+                Layer your persona preferences to auto-tune training blocks, find compatible buddies, and sync insights across your favorite platforms.
               </p>
             </div>
             <Button
               asChild
               variant="ghost"
-              className="self-start border border-white/10 bg-white/5 text-foreground/70 transition hover:bg-white/10 hover:text-foreground"
+              className="self-start border border-white/10 bg-secondary/60 text-foreground/80 transition hover:border-primary/40 hover:bg-primary/10 hover:text-white"
             >
-              <a href="/#workflow" className="inline-flex items-center gap-2">
-                Explore full platform
-                <ArrowRight className="size-4" />
+              <a href="#profile" className="inline-flex items-center gap-2">
+                Configure profile
+                <Settings2 className="size-4" />
               </a>
             </Button>
           </div>
+          <div className="grid gap-6 md:grid-cols-3">
+            {personaStories.map((persona) => (
+              <div
+                key={persona.name}
+                className="rounded-[28px] border border-white/10 bg-card/80 p-7 shadow-card-soft backdrop-blur-xl"
+              >
+                <p className="text-xs uppercase tracking-[0.4em] text-primary/80">Persona</p>
+                <h3 className="mt-4 font-display text-2xl text-white">{persona.name}</h3>
+                <p className="mt-3 text-sm text-foreground/70">{persona.summary}</p>
+                <p className="mt-5 text-xs uppercase tracking-[0.4em] text-foreground/50">{persona.stats}</p>
+              </div>
+            ))}
+          </div>
           <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-4">
-            {featureCards.map(({ icon: Icon, title, description, highlight }) => (
+            {featureHighlights.map(({ title, description, icon: Icon, accent }) => (
               <article
                 key={title}
-                className="group relative overflow-hidden rounded-3xl border border-white/10 bg-white/5 p-6 transition duration-500 hover:border-primary/60 hover:bg-white/10"
+                className="group relative overflow-hidden rounded-[28px] border border-white/10 bg-secondary/70 p-6 shadow-card-soft backdrop-blur-xl transition hover:border-primary/60 hover:bg-secondary/80"
               >
-                <div className="absolute -right-8 top-8 h-28 w-28 rounded-full bg-primary/20 blur-3xl transition duration-500 group-hover:bg-primary/30" />
-                <div className="flex size-12 items-center justify-center rounded-2xl border border-white/10 bg-background/80 text-primary shadow-soft">
+                <div className="absolute -right-16 top-8 h-40 w-40 rounded-full bg-primary/10 blur-3xl transition duration-300 group-hover:bg-primary/20" />
+                <div className="flex size-12 items-center justify-center rounded-2xl bg-primary/15 text-primary">
                   <Icon className="size-5" />
                 </div>
-                <h3 className="mt-6 font-display text-2xl text-white">{title}</h3>
+                <h3 className="mt-6 font-display text-xl text-white">{title}</h3>
                 <p className="mt-3 text-sm leading-relaxed text-foreground/70">{description}</p>
-                <p className="mt-6 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs font-semibold uppercase tracking-[0.35em] text-foreground/60">
-                  {highlight}
-                </p>
+                <span className="mt-6 inline-flex items-center gap-2 rounded-full border border-white/10 bg-background/60 px-3 py-1 text-xs font-semibold uppercase tracking-[0.35em] text-foreground/60">
+                  {accent}
+                </span>
               </article>
             ))}
           </div>
         </section>
 
-        <section id="workflow" className="container relative pb-24 lg:pb-32">
-          <div className="grid gap-12 lg:grid-cols-[0.8fr_1.2fr] lg:items-center">
-            <div className="space-y-5">
-              <span className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs font-semibold uppercase tracking-[0.35em] text-foreground/50">
-                Orchestrate
-              </span>
-              <h2 className="font-display text-3xl text-white sm:text-4xl">
-                A workflow that keeps creation in flow state.
+        <section id="dashboard" className="container space-y-10">
+          <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
+            <div>
+              <p className="text-sm uppercase tracking-[0.4em] text-primary/80">Dashboard</p>
+              <h2 className="mt-2 font-display text-3xl text-white sm:text-4xl">
+                Visualize every watt, stride, and stroke in one command center.
               </h2>
-              <p className="text-base text-foreground/70 sm:text-lg">
-                Blueprint, iterate, and ship models inside one opinionated canvas. Automations remove the mechanical steps, so teams stay focused on what matters: shaping intelligent behavior.
+              <p className="mt-3 max-w-2xl text-base text-foreground/70">
+                FlowNation distills performance signals, event timelines, and achievements so you can tune training loads and celebrate progress with your crew.
               </p>
             </div>
-            <div className="grid gap-6 md:grid-cols-3">
-              {workflow.map((item) => (
-                <div
-                  key={item.step}
-                  className="relative overflow-hidden rounded-3xl border border-white/10 bg-white/5 p-6 transition hover:border-primary/60 hover:bg-white/10"
+            <div className="flex items-center gap-3 text-sm text-foreground/70">
+              <Zap className="size-5 text-primary" />
+              <span>Live sync with Garmin, Strava, Zwift</span>
+            </div>
+          </div>
+          <div className="grid gap-6 lg:grid-cols-[1.1fr_0.9fr]">
+            <div className="grid gap-6 rounded-[32px] border border-white/10 bg-secondary/70 p-8 shadow-card-soft backdrop-blur-xl">
+              <div className="flex flex-wrap items-center justify-between gap-4">
+                <div>
+                  <p className="text-xs uppercase tracking-[0.35em] text-foreground/50">Good morning, Alex</p>
+                  <h3 className="font-display text-2xl text-white">Recovery Day</h3>
+                </div>
+                <Button
+                  variant="ghost"
+                  size="sm"
+                  className="border border-white/10 bg-background/60 text-xs uppercase tracking-[0.35em] text-foreground/70 hover:border-primary/40 hover:bg-primary/10 hover:text-white"
                 >
-                  <span className="text-xs font-semibold uppercase tracking-[0.4em] text-foreground/40">
-                    {item.step}
+                  View plan
+                </Button>
+              </div>
+              <div className="grid gap-4 sm:grid-cols-2">
+                <div className="rounded-2xl border border-white/10 bg-background/60 p-5">
+                  <p className="flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.35em] text-foreground/50">
+                    <Users className="size-4 text-primary" /> Today&apos;s Distance
+                  </p>
+                  <p className="mt-3 text-3xl font-semibold text-white">25 mi</p>
+                  <p className="mt-1 text-xs uppercase tracking-[0.3em] text-foreground/50">Ride with team comet</p>
+                </div>
+                <div className="rounded-2xl border border-white/10 bg-background/60 p-5">
+                  <p className="flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.35em] text-foreground/50">
+                    <HeartPulse className="size-4 text-primary" /> Training Load
+                  </p>
+                  <p className="mt-3 text-3xl font-semibold text-white">Moderate</p>
+                  <p className="mt-1 text-xs uppercase tracking-[0.3em] text-foreground/50">HRV trending up</p>
+                </div>
+              </div>
+              <div className="grid gap-4 sm:grid-cols-2">
+                <div className="rounded-2xl border border-white/10 bg-background/60 p-5">
+                  <p className="flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.35em] text-foreground/50">
+                    <Award className="size-4 text-primary" /> Badges & Achievements
+                  </p>
+                  <div className="mt-3 flex flex-wrap gap-2 text-xs font-semibold uppercase tracking-[0.3em] text-primary/90">
+                    <span className="rounded-full bg-primary/10 px-3 py-1 text-primary">Centurion</span>
+                    <span className="rounded-full bg-accent/10 px-3 py-1 text-accent">King of the Mountain</span>
+                    <span className="rounded-full bg-primary/10 px-3 py-1 text-primary">Eco Rider</span>
+                  </div>
+                </div>
+                <div className="rounded-2xl border border-white/10 bg-background/60 p-5">
+                  <p className="flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.35em] text-foreground/50">
+                    <Calendar className="size-4 text-primary" /> Upcoming Sessions
+                  </p>
+                  <ul className="mt-3 space-y-2 text-sm text-foreground/70">
+                    <li className="flex items-center justify-between">
+                      <span>Sunrise Endurance Ride</span>
+                      <span>Sat • 100 km</span>
+                    </li>
+                    <li className="flex items-center justify-between">
+                      <span>Interval Track Session</span>
+                      <span>Mon • 8x800 m</span>
+                    </li>
+                    <li className="flex items-center justify-between">
+                      <span>Tempo Swim</span>
+                      <span>Wed • 2.5 km</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div className="flex h-full flex-col gap-6">
+              <div className="rounded-[32px] border border-white/10 bg-secondary/70 p-7 shadow-card-soft backdrop-blur-xl">
+                <p className="text-xs uppercase tracking-[0.35em] text-foreground/50">Recent Chats</p>
+                <div className="mt-4 space-y-4 text-sm text-foreground/70">
+                  {recentChats.map((chat) => (
+                    <div key={chat.name} className="rounded-2xl border border-white/5 bg-background/60 px-4 py-3">
+                      <p className="font-semibold text-white">{chat.name}</p>
+                      <p className="mt-1 text-foreground/70">{chat.message}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+              <div className="rounded-[32px] border border-white/10 bg-secondary/70 p-7 shadow-card-soft backdrop-blur-xl">
+                <p className="text-xs uppercase tracking-[0.35em] text-foreground/50">Upcoming Group Rides</p>
+                <div className="mt-4 space-y-4">
+                  {upcomingRides.map((ride) => (
+                    <div key={ride.title} className="flex flex-col gap-1 rounded-2xl border border-white/5 bg-background/60 p-4 text-sm text-foreground/70">
+                      <p className="font-semibold text-white">{ride.title}</p>
+                      <p className="text-foreground/60">{ride.date}</p>
+                      <div className="flex items-center justify-between text-xs uppercase tracking-[0.3em] text-foreground/50">
+                        <span>{ride.distance}</span>
+                        <span>{ride.riders}</span>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+                <Button
+                  variant="ghost"
+                  className="mt-5 w-full border border-white/10 bg-background/60 text-xs uppercase tracking-[0.3em] text-foreground/70 hover:border-primary/40 hover:bg-primary/10 hover:text-white"
+                >
+                  View full calendar
+                </Button>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="community" className="container space-y-10">
+          <div className="flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
+            <div>
+              <p className="text-sm uppercase tracking-[0.4em] text-primary/80">Community</p>
+              <h2 className="mt-2 font-display text-3xl text-white sm:text-4xl">
+                Find riders who match your speed, terrain, and vibe.
+              </h2>
+              <p className="mt-3 max-w-2xl text-base text-foreground/70">
+                Browse FlowNation profiles with deep training context to plan your next ride, tri relay, or community challenge.
+              </p>
+            </div>
+            <Button
+              variant="ghost"
+              className="self-start border border-white/10 bg-secondary/60 text-foreground/80 transition hover:border-primary/40 hover:bg-primary/10 hover:text-white"
+            >
+              <MessageCircle className="mr-2 size-4" /> Start a chat
+            </Button>
+          </div>
+          <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+            {communityMembers.map((member) => (
+              <article key={member.name} className="rounded-[28px] border border-white/10 bg-card/80 p-6 shadow-card-soft backdrop-blur-xl">
+                <div className="flex items-center justify-between text-sm text-foreground/60">
+                  <span className="font-semibold text-white">{member.name}</span>
+                  <span className="rounded-full bg-accent/10 px-3 py-1 text-xs uppercase tracking-[0.3em] text-accent">
+                    Connect
                   </span>
-                  <h3 className="mt-4 font-display text-xl text-white">{item.title}</h3>
-                  <p className="mt-3 text-sm text-foreground/70">{item.description}</p>
-                  <div className="absolute -left-10 bottom-0 h-24 w-24 rounded-full bg-accent/10 blur-3xl" />
+                </div>
+                <div className="mt-5 space-y-2 text-xs uppercase tracking-[0.35em] text-foreground/45">
+                  <p className="text-foreground/60">{member.rides}</p>
+                  <p className="text-foreground/60">{member.speed}</p>
+                  <p className="text-foreground/60">{member.events}</p>
+                </div>
+              </article>
+            ))}
+          </div>
+          <div className="space-y-6">
+            <p className="text-sm uppercase tracking-[0.4em] text-primary/80">You might like to ride with...</p>
+            <div className="grid gap-6 md:grid-cols-3">
+              {recommendedPartners.map((partner) => (
+                <div key={partner.name} className="rounded-[28px] border border-white/10 bg-secondary/70 p-6 shadow-card-soft backdrop-blur-xl">
+                  <p className="font-semibold text-white">{partner.name}</p>
+                  <p className="mt-2 text-sm text-foreground/70">{partner.rides}</p>
+                  <Button
+                    variant="ghost"
+                    className="mt-5 w-full border border-white/10 bg-background/60 text-xs uppercase tracking-[0.3em] text-foreground/70 hover:border-primary/40 hover:bg-primary/10 hover:text-white"
+                  >
+                    Connect
+                  </Button>
                 </div>
               ))}
             </div>
           </div>
         </section>
 
-        <section id="insights" className="container relative pb-24 lg:pb-32">
-          <div className="grid gap-8 lg:grid-cols-[1.1fr_0.9fr]">
-            <div className="rounded-3xl border border-white/10 bg-white/5 p-8 shadow-soft backdrop-blur-lg">
+        <section id="profile" className="container space-y-10">
+          <div className="flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
+            <div>
+              <p className="text-sm uppercase tracking-[0.4em] text-primary/80">Profile</p>
+              <h2 className="mt-2 font-display text-3xl text-white sm:text-4xl">
+                Centralize preferences, integrations, and privacy in seconds.
+              </h2>
+              <p className="mt-3 max-w-2xl text-base text-foreground/70">
+                Sync FlowNation with your wearables, manage visibility, and fine-tune notifications without leaving the profile hub.
+              </p>
+            </div>
+            <Button
+              variant="ghost"
+              className="self-start border border-white/10 bg-secondary/60 text-foreground/80 transition hover:border-primary/40 hover:bg-primary/10 hover:text-white"
+            >
+              <Users className="mr-2 size-4" /> Manage team access
+            </Button>
+          </div>
+          <div className="grid gap-6 lg:grid-cols-[0.9fr_1.1fr]">
+            <div className="rounded-[32px] border border-white/10 bg-secondary/70 p-7 shadow-card-soft backdrop-blur-xl">
               <div className="flex items-center justify-between">
                 <div>
-                  <p className="text-xs font-semibold uppercase tracking-[0.4em] text-foreground/40">
-                    Diagnostics
-                  </p>
-                  <h3 className="mt-2 font-display text-2xl text-white">Real-time validation</h3>
+                  <p className="text-xs uppercase tracking-[0.35em] text-foreground/50">Profile Information</p>
+                  <p className="mt-2 font-display text-2xl text-white">Jane Doe</p>
+                  <p className="mt-1 text-sm text-foreground/70">jane.doe@flow-nation.com</p>
                 </div>
-                <div className="rounded-full border border-white/10 bg-background/80 px-4 py-2 text-xs uppercase tracking-[0.35em] text-foreground/50">
-                  <LineChart className="mr-2 inline size-3.5" />
-                  Live
-                </div>
+                <Button
+                  variant="ghost"
+                  size="sm"
+                  className="border border-white/10 bg-background/60 text-xs uppercase tracking-[0.3em] text-foreground/70 hover:border-primary/40 hover:bg-primary/10 hover:text-white"
+                >
+                  Upload new photo
+                </Button>
               </div>
-              <div className="mt-8 grid gap-6 md:grid-cols-2">
-                <div className="flex flex-col gap-4">
-                  {diagnostics.map((diag) => (
-                    <div key={diag.label} className="space-y-2">
-                      <div className="flex items-center justify-between text-sm text-foreground/60">
-                        <span>{diag.label}</span>
-                        <span className="font-semibold text-foreground">{diag.value}%</span>
-                      </div>
-                      <div className="h-2.5 overflow-hidden rounded-full bg-white/10">
-                        <div
-                          className="h-full rounded-full bg-gradient-to-r from-primary via-accent to-primary"
-                          style={{ width: `${diag.value}%` }}
-                        />
-                      </div>
-                    </div>
-                  ))}
+              <div className="mt-6 grid gap-4 text-sm text-foreground/70">
+                <div className="rounded-2xl border border-white/10 bg-background/60 p-4">
+                  <p className="text-xs uppercase tracking-[0.3em] text-foreground/50">Favorite Sports</p>
+                  <p className="mt-2 text-white">Cycling • Triathlon • Trail Running • Gravel</p>
                 </div>
-                <div className="flex h-full flex-col justify-between gap-4 rounded-2xl border border-white/10 bg-background/80 p-5">
-                  <div className="space-y-3">
-                    <p className="text-sm font-medium text-foreground/70">Alerts & guardrails</p>
-                    <div className="space-y-2 text-sm text-foreground/60">
-                      <p className="flex items-center justify-between rounded-xl border border-white/5 bg-white/5 px-3 py-2">
-                        <span className="flex items-center gap-2">
-                          <Component className="size-4 text-primary" />
-                          Explainability summary
-                        </span>
-                        <span className="text-emerald-300">Passed</span>
-                      </p>
-                      <p className="flex items-center justify-between rounded-xl border border-white/5 bg-white/5 px-3 py-2">
-                        <span className="flex items-center gap-2">
-                          <BarChart3 className="size-4 text-primary" />
-                          Bias monitor
-                        </span>
-                        <span className="text-foreground/70">Balanced</span>
-                      </p>
-                      <p className="flex items-center justify-between rounded-xl border border-white/5 bg-white/5 px-3 py-2">
-                        <span className="flex items-center gap-2">
-                          <ShieldCheck className="size-4 text-primary" />
-                          Compliance scan
-                        </span>
-                        <span className="text-emerald-300">Clean</span>
-                      </p>
+                <div className="rounded-2xl border border-white/10 bg-background/60 p-4">
+                  <p className="text-xs uppercase tracking-[0.3em] text-foreground/50">External Connections</p>
+                  <div className="mt-3 space-y-2 text-sm">
+                    <div className="flex items-center justify-between">
+                      <span>Strava</span>
+                      <span className="rounded-full bg-primary/15 px-3 py-1 text-xs uppercase tracking-[0.3em] text-primary">Connected</span>
                     </div>
-                  </div>
-                  <div className="rounded-2xl border border-white/10 bg-white/5 p-4 text-sm text-foreground/60">
-                    <p className="font-semibold text-foreground/70">"Model Canvas unlocked a 4× faster experimentation cadence across labs and production."</p>
-                    <p className="mt-3 text-xs uppercase tracking-[0.35em] text-foreground/40">— Aurora Systems</p>
+                    <div className="flex items-center justify-between">
+                      <span>Garmin Connect</span>
+                      <span className="rounded-full bg-primary/15 px-3 py-1 text-xs uppercase tracking-[0.3em] text-primary">Connected</span>
+                    </div>
+                    <div className="flex items-center justify-between">
+                      <span>Zwift</span>
+                      <span className="rounded-full bg-accent/15 px-3 py-1 text-xs uppercase tracking-[0.3em] text-accent">Pending</span>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
             <div className="flex h-full flex-col gap-6">
-              <div className="rounded-3xl border border-white/10 bg-white/5 p-7 shadow-soft backdrop-blur-lg">
-                <div className="flex items-center justify-between">
-                  <div>
-                    <p className="text-xs font-semibold uppercase tracking-[0.4em] text-foreground/40">
-                      Configuration
-                    </p>
-                    <h3 className="mt-2 font-display text-2xl text-white">Launch controls</h3>
-                  </div>
-                  <SlidersHorizontal className="size-5 text-primary" />
-                </div>
-                <div className="mt-6 space-y-4 text-sm text-foreground/70">
-                  {configOptions.map((option) => (
-                    <div
-                      key={option.label}
-                      className="flex items-center justify-between rounded-2xl border border-white/10 bg-background/80 px-4 py-3"
-                    >
-                      <span className="text-foreground/60">{option.label}</span>
-                      <span className="font-medium text-foreground">{option.value}</span>
+              <div className="rounded-[32px] border border-white/10 bg-secondary/70 p-7 shadow-card-soft backdrop-blur-xl">
+                <p className="text-xs uppercase tracking-[0.35em] text-foreground/50">Preferences</p>
+                <div className="mt-5 space-y-3 text-sm text-foreground/70">
+                  {profilePreferences.map((pref) => (
+                    <div key={pref.label} className="flex items-center justify-between rounded-2xl border border-white/10 bg-background/60 px-4 py-3">
+                      <span>{pref.label}</span>
+                      <span className="font-semibold text-white">{pref.value}</span>
                     </div>
                   ))}
                 </div>
                 <Button
-                  type="button"
-                  className="mt-6 w-full bg-gradient-to-r from-primary via-accent to-primary text-primary-foreground shadow-glow transition hover:from-primary/90 hover:via-accent/90 hover:to-primary/90"
+                  variant="ghost"
+                  className="mt-6 w-full border border-white/10 bg-background/60 text-xs uppercase tracking-[0.3em] text-foreground/70 hover:border-primary/40 hover:bg-primary/10 hover:text-white"
                 >
-                  Generate training job
+                  Save changes
                 </Button>
               </div>
-              <div className="rounded-3xl border border-white/10 bg-white/5 p-7 shadow-soft backdrop-blur-lg">
-                <div className="flex items-center justify-between">
-                  <div>
-                    <p className="text-xs font-semibold uppercase tracking-[0.4em] text-foreground/40">
-                      Integrations
-                    </p>
-                    <h3 className="mt-2 font-display text-2xl text-white">Ship wherever you need</h3>
+              <div className="rounded-[32px] border border-white/10 bg-secondary/70 p-7 shadow-card-soft backdrop-blur-xl">
+                <p className="text-xs uppercase tracking-[0.35em] text-foreground/50">Integrations</p>
+                <div className="mt-4 space-y-3 text-sm text-foreground/70">
+                  <div className="flex items-center justify-between rounded-2xl border border-white/10 bg-background/60 px-4 py-3">
+                    <span>TrainingPeaks</span>
+                    <span className="rounded-full bg-primary/15 px-3 py-1 text-xs uppercase tracking-[0.3em] text-primary">Connected</span>
                   </div>
-                </div>
-                <div className="mt-6 grid gap-4 text-sm text-foreground/70">
-                  {[
-                    { label: "Edge delivery", detail: "Triton, CoreML, WebGPU" },
-                    { label: "Cloud endpoints", detail: "SageMaker, Vertex, Azure" },
-                    { label: "Observability", detail: "Weights & Biases, Evidently" },
-                  ].map((item) => (
-                    <div
-                      key={item.label}
-                      className="flex items-center justify-between rounded-2xl border border-white/10 bg-background/80 px-4 py-3"
-                    >
-                      <span className="font-medium text-foreground">{item.label}</span>
-                      <span className="text-foreground/60">{item.detail}</span>
-                    </div>
-                  ))}
+                  <div className="flex items-center justify-between rounded-2xl border border-white/10 bg-background/60 px-4 py-3">
+                    <span>Wahoo</span>
+                    <span className="rounded-full bg-accent/15 px-3 py-1 text-xs uppercase tracking-[0.3em] text-accent">Syncing</span>
+                  </div>
+                  <div className="flex items-center justify-between rounded-2xl border border-white/10 bg-background/60 px-4 py-3">
+                    <span>Apple Health</span>
+                    <span className="rounded-full bg-primary/15 px-3 py-1 text-xs uppercase tracking-[0.3em] text-primary">Connected</span>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </section>
 
-        <section id="cta" className="container relative pb-28">
-          <div className="relative overflow-hidden rounded-3xl border border-white/10 bg-gradient-to-br from-primary/20 via-background to-background p-10 shadow-glow sm:p-14">
-            <div className="absolute inset-y-0 right-0 hidden w-1/3 rounded-l-full bg-primary/10 blur-3xl lg:block" />
-            <div className="flex flex-col gap-8 lg:flex-row lg:items-center lg:justify-between">
-              <div className="max-w-xl space-y-4">
-                <h2 className="font-display text-3xl text-white sm:text-4xl">
-                  Ready to craft your next breakthrough model?
-                </h2>
-                <p className="text-base text-foreground/70 sm:text-lg">
-                  Curate data, define architecture, and deploy with observability baked in. Model Canvas keeps every stakeholder aligned from ideation to production.
-                </p>
-              </div>
-              <div className="flex flex-col gap-4 sm:flex-row sm:items-center">
-                <Button
-                  type="button"
-                  size="lg"
-                  className="bg-gradient-to-r from-primary via-accent to-primary text-base text-primary-foreground shadow-glow transition hover:from-primary/90 hover:via-accent/90 hover:to-primary/90"
-                >
-                  Start creating now
-                  <ArrowRight className="size-4" />
-                </Button>
-                <Button
-                  asChild
-                  variant="ghost"
-                  size="lg"
-                  className="border border-white/10 bg-white/5 text-base text-foreground/80 transition hover:bg-white/10 hover:text-foreground"
-                >
-                  <a href="mailto:hello@modelcanvas.ai">Schedule onboarding</a>
-                </Button>
-              </div>
+        <section id="cta" className="container">
+          <div className="relative overflow-hidden rounded-[36px] border border-white/10 bg-gradient-to-br from-primary/20 via-background to-background p-12 text-center shadow-card-soft backdrop-blur-xl">
+            <div className="absolute inset-x-0 bottom-0 h-1 bg-gradient-to-r from-primary via-accent to-primary" />
+            <h2 className="font-display text-3xl text-white sm:text-4xl">
+              Ready to find your flow?
+            </h2>
+            <p className="mt-4 text-base text-foreground/70 sm:text-lg">
+              Unlock elite-level training, discover global events, and connect with athletes who match your pace.
+            </p>
+            <div className="mt-8 flex flex-col justify-center gap-4 sm:flex-row">
+              <Button
+                size="lg"
+                className="bg-primary px-8 text-base font-semibold text-primary-foreground shadow-[0_32px_70px_-30px_rgba(0,188,212,0.85)] transition hover:bg-primary/90"
+              >
+                Join the FlowNation Community
+                <ArrowRight className="size-4" />
+              </Button>
+              <Button
+                variant="ghost"
+                size="lg"
+                className="border border-white/10 bg-secondary/60 text-base text-foreground/80 transition hover:border-primary/40 hover:bg-primary/10 hover:text-white"
+              >
+                Explore upcoming events
+              </Button>
             </div>
           </div>
         </section>
