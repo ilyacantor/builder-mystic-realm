@@ -57,31 +57,11 @@ const badges = [
   "Marathon Finisher",
 ];
 
+import { FlowNationShell } from "@/components/layout/flownation-shell";
+
 export default function DashboardInsights() {
   return (
-    <div className="min-h-screen bg-[#05060b] text-white">
-      <header className="border-b border-white/10 bg-gradient-to-r from-[#03b3d4] via-[#03c5d5] to-[#03d8c6]">
-        <div className="mx-auto flex max-w-6xl items-center justify-between gap-6 px-6 py-4">
-          <div className="flex items-center gap-3 text-black">
-            <span className="rounded-full bg-white/30 px-3 py-1 text-xs font-bold uppercase tracking-[0.3em]">FN</span>
-            <span className="font-display text-xl font-semibold tracking-[0.2em]">FlowNationUI</span>
-          </div>
-          <nav className="hidden items-center gap-8 text-sm font-semibold uppercase tracking-[0.3em] text-black lg:flex">
-            <a href="/" className="hover:text-white">Home</a>
-            <a href="/discover" className="hover:text-white">Discover</a>
-            <a href="/community" className="hover:text-white">Community</a>
-            <a href="/dashboard" className="text-white">Dashboard</a>
-            <a href="/profile" className="hover:text-white">Profile</a>
-          </nav>
-          <a
-            href="/profile"
-            className="hidden rounded-full bg-black/20 px-6 py-2 text-xs font-semibold uppercase tracking-[0.3em] text-black lg:inline-flex"
-          >
-            Profile
-          </a>
-        </div>
-      </header>
-
+    <FlowNationShell>
       <main className="mx-auto flex max-w-6xl flex-col gap-10 px-6 py-12">
         <section className="rounded-[2rem] border border-white/10 bg-[#10131d] p-8">
           <div className="flex items-center gap-4">
@@ -223,6 +203,6 @@ export default function DashboardInsights() {
           <p className="text-xs uppercase tracking-[0.3em]">Performance Hub</p>
         </div>
       </footer>
-    </div>
+    </FlowNationShell>
   );
 }
