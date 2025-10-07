@@ -72,7 +72,6 @@ export default function Index() {
           />
           <div className="absolute inset-0 -z-10 bg-gradient-to-r from-black/80 via-black/65 to-black/30" />
           <div className="max-w-xl space-y-6">
-            <p className="text-sm font-semibold uppercase tracking-[0.3em] text-[#8fb0ff]">Cycling Mastery</p>
             <h1 className="text-4xl font-semibold sm:text-5xl">Unleash Your Inner Cyclist</h1>
             <p className="text-base text-white/80">
               Join the FlowNation and redefine your limits on two wheels. Experience personalized training, connect with a global community, and achieve your cycling dreams.
@@ -89,11 +88,8 @@ export default function Index() {
         </section>
 
         <section className="space-y-10">
-          <header className="space-y-4 text-center">
+          <header className="text-center">
             <h2 className="text-3xl font-semibold">Explore Your Potential</h2>
-            <p className="mx-auto max-w-2xl text-base text-white/70">
-              Discover training paths tailored to every rider. Choose your discipline and unlock curated programs that elevate your performance.
-            </p>
           </header>
           <div className="grid gap-6 md:grid-cols-2">
             {features.map((feature) => (
@@ -110,13 +106,6 @@ export default function Index() {
           <p className="mt-4 text-base text-white/70">
             Become part of a global movement, push your boundaries, and achieve your cycling dreams with FlowNation.
           </p>
-          <a
-            href="/community"
-            className="mt-6 inline-flex items-center gap-3 rounded-full border border-white/20 px-6 py-3 text-xs font-semibold uppercase tracking-[0.3em] text-white"
-          >
-            Join the FlowNation Community Today!
-            <ArrowRight className="size-4" />
-          </a>
         </section>
 
         <section className="space-y-10">
