@@ -61,8 +61,8 @@ export default {
       },
       borderRadius: {
         lg: "var(--radius)",
-        md: "calc(var(--radius) - 2px)",
-        sm: "calc(var(--radius) - 4px)",
+        md: "calc(var(--radius) - 4px)",
+        sm: "calc(var(--radius) - 8px)",
       },
       keyframes: {
         "accordion-down": {
@@ -81,24 +81,28 @@ export default {
             height: "0",
           },
         },
+        shimmer: {
+          "0%": { transform: "translateX(-100%)" },
+          "100%": { transform: "translateX(100%)" },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
+        shimmer: "shimmer 3s infinite",
       },
       fontFamily: {
         sans: ["'Inter'", ...fontFamily.sans],
-        display: ["'Space Grotesk'", ...fontFamily.sans],
+        display: ["'Montserrat'", ...fontFamily.sans],
       },
       backgroundImage: {
-        "hero-grid":
-          "radial-gradient(circle at 20% 20%, hsl(var(--primary) / 0.22), transparent 55%), radial-gradient(circle at 80% 0%, hsl(var(--accent) / 0.25), transparent 60%)",
-        mesh:
-          "linear-gradient(135deg, hsl(var(--primary) / 0.18) 0%, transparent 45%), linear-gradient(215deg, hsl(var(--accent) / 0.12) 10%, transparent 55%)",
+        "hero-gradient":
+          "radial-gradient(120% 120% at 20% 20%, hsl(var(--primary) / 0.6) 0%, transparent 60%), radial-gradient(120% 120% at 80% 0%, hsl(var(--accent) / 0.45) 0%, transparent 70%)",
+        "footer-gradient": "linear-gradient(90deg, #00BCD4 0%, #FF7F11 50%, #00BCD4 100%)",
       },
       boxShadow: {
-        glow: "0 32px 120px -40px hsl(var(--primary) / 0.8)",
-        soft: "0 18px 60px -30px hsl(var(--foreground) / 0.12)",
+        "card-soft": "0 24px 60px -32px hsl(var(--primary) / 0.35)",
+        "card-border": "inset 0 0 0 1px hsl(var(--border))",
       },
     },
   },
