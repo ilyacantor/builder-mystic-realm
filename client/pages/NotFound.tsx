@@ -14,29 +14,29 @@ const NotFound = () => {
   return (
     <SiteLayout>
       <section className="relative flex min-h-[60vh] items-center justify-center overflow-hidden py-24">
-        <div className="absolute inset-0 -z-10 bg-hero-grid opacity-40" />
-        <div className="absolute inset-0 -z-20 bg-mesh" />
-        <div className="container relative mx-auto max-w-2xl rounded-3xl border border-white/10 bg-white/5 p-12 text-center shadow-soft backdrop-blur-xl">
-          <p className="text-xs font-semibold uppercase tracking-[0.4em] text-foreground/40">Error 404</p>
-          <h1 className="mt-4 font-display text-4xl text-white">This page drifted off the model.</h1>
+        <div className="absolute inset-0 -z-10 bg-hero-gradient opacity-60" />
+        <div className="absolute inset-0 -z-20 bg-[radial-gradient(circle_at_top,_rgba(0,188,212,0.18),_transparent_60%)]" />
+        <div className="container relative mx-auto max-w-2xl rounded-[32px] border border-white/10 bg-secondary/80 p-12 text-center shadow-card-soft backdrop-blur-xl">
+          <p className="text-xs font-semibold uppercase tracking-[0.4em] text-primary/80">Error 404</p>
+          <h1 className="mt-4 font-display text-4xl text-white">Looks like this ride veered off course.</h1>
           <p className="mt-4 text-base text-foreground/70">
-            We couldn&apos;t locate the route <span className="text-foreground">{location.pathname}</span>. Return to the canvas to continue crafting your next breakthrough.
+            We couldn&apos;t locate <span className="text-white">{location.pathname}</span>. Head back to FlowNation HQ to plan your next adventure.
           </p>
           <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
             <Button
               size="lg"
-              className="bg-gradient-to-r from-primary via-accent to-primary text-base text-primary-foreground shadow-glow transition hover:from-primary/90 hover:via-accent/90 hover:to-primary/90"
+              className="bg-primary px-7 text-base font-semibold text-primary-foreground shadow-[0_32px_70px_-30px_rgba(0,188,212,0.85)] transition hover:bg-primary/90"
               asChild
             >
-              <a href="/">Back to home</a>
+              <a href="/">Return home</a>
             </Button>
             <Button
               variant="ghost"
               size="lg"
-              className="border border-white/10 bg-white/5 text-base text-foreground/80 transition hover:bg-white/10 hover:text-foreground"
+              className="border border-white/10 bg-secondary/60 text-base text-foreground/80 transition hover:border-primary/40 hover:bg-primary/10 hover:text-white"
               asChild
             >
-              <a href="/#features">Explore capabilities</a>
+              <a href="/#community">Browse riders</a>
             </Button>
           </div>
         </div>
