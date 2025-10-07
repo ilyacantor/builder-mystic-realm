@@ -1,3 +1,5 @@
+import { FlowNationShell } from "@/components/layout/flownation-shell";
+
 const connections = [
   { name: "Strava", status: "Connect" },
   { name: "Garmin Connect", status: "Connected" },
@@ -12,23 +14,7 @@ const preferences = [
 
 export default function ProfileSettings() {
   return (
-    <div className="min-h-screen bg-[#05060b] text-white">
-      <header className="border-b border-white/10 bg-gradient-to-r from-[#03b3d4] via-[#03c5d5] to-[#03d8c6]">
-        <div className="mx-auto flex max-w-6xl items-center justify-between gap-6 px-6 py-4">
-          <div className="flex items-center gap-3 text-black">
-            <span className="rounded-full bg-white/30 px-3 py-1 text-xs font-bold uppercase tracking-[0.3em]">FN</span>
-            <span className="font-display text-xl font-semibold tracking-[0.2em]">FlowNationUI</span>
-          </div>
-          <nav className="hidden items-center gap-8 text-sm font-semibold uppercase tracking-[0.3em] text-black lg:flex">
-            <a href="/" className="hover:text-white">Home</a>
-            <a href="/discover" className="hover:text-white">Discover</a>
-            <a href="/community" className="hover:text-white">Community</a>
-            <a href="/dashboard" className="hover:text-white">Dashboard</a>
-            <a href="/profile" className="text-white">Profile</a>
-          </nav>
-        </div>
-      </header>
-
+    <FlowNationShell>
       <main className="mx-auto flex max-w-6xl gap-6 px-6 py-12">
         <aside className="hidden w-64 flex-col gap-3 lg:flex">
           {[
@@ -164,6 +150,6 @@ export default function ProfileSettings() {
           <p className="text-xs uppercase tracking-[0.3em]">Profile Settings</p>
         </div>
       </footer>
-    </div>
+    </FlowNationShell>
   );
 }
