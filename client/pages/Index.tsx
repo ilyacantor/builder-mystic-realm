@@ -1,258 +1,149 @@
-import { SiteLayout } from "@/components/layout/site-layout";
-import { Button } from "@/components/ui/button";
-import {
-  CheckCircle2,
-  Mail,
-  MessageCircle,
-  SlidersHorizontal,
-} from "lucide-react";
+import { ArrowRight, Menu } from "lucide-react";
 
-const colorTokens = [
-  { name: "Electric Cyan", hex: "#00BCC4" },
-  { name: "Bright Orange", hex: "#FF6F00" },
-  { name: "Deep Charcoal", hex: "#0D0F14" },
-  { name: "Graphite Gray", hex: "#202A2A" },
-  { name: "Primary Surface", hex: "#0B0C1A" },
-  { name: "Brand2nd Surface", hex: "#FF6F0A" },
-  { name: "Primary Card", hex: "#0B0C43" },
-  { name: "Brand2nd Card", hex: "#FF6F33" },
-];
-
-const typographyCards = [
+const features = [
   {
-    label: "H1 – Quicksand Bold 30px White",
-    title: "The FlowNation Journey",
-    description: "Expressive hero headlines that set the tone for every experience.",
+    title: "Road Cycling",
+    description: "Conquer epic climbs and swift descents on challenging road routes.",
   },
   {
-    label: "H2 – Quicksand Semibold 24px Cyan",
-    title: "Discover Your Next Challenge",
-    description: "Section intros that energize athletes to explore further.",
+    title: "Mountain Biking",
+    description: "Navigate technical trails and breathtaking landscapes off-road.",
   },
   {
-    label: "Body – Inter Regular 16px Light Gray",
-    title: "FlowNation connects endurance athletes with events, communities, and insights.",
-    description:
-      "Find your pace, track your progress, and join a vibrant network of peers. Secondary body text is ideal for detailed descriptions or captions.",
+    title: "Triathlon Training",
+    description: "Master multi-sport events with integrated cycling, running, and swimming plans.",
+  },
+  {
+    title: "Track Cycling",
+    description: "Experience the adrenaline of high-speed racing on velodrome tracks.",
   },
 ];
 
-const componentCards = [
+const benefits = [
   {
-    title: "Buttons",
-    items: [
-      { label: "Primary Action", className: "bg-primary text-primary-foreground" },
-      { label: "Outline Action", className: "border border-white/15 bg-transparent text-foreground/80" },
-      { label: "Ghost Action", className: "bg-transparent text-foreground/70" },
-      { label: "Accent Action", className: "bg-accent text-accent-foreground" },
-    ],
+    title: "Global Community",
+    description: "Connect with thousands of athletes worldwide, share your journey, and find inspiration.",
   },
   {
-    title: "Cards",
-    items: [
-      { label: "Event Highlight", description: "Join us for the Annual Triathlon Challenge on October 28th. Sign up now!" },
-    ],
+    title: "Personalized Training",
+    description: "AI-powered plans adapt to your performance, helping you reach peak condition faster.",
   },
   {
-    title: "Form Elements",
-    elements: [
-      { placeholder: "Email Address" },
-      { placeholder: "Your message here...", multiline: true },
-      { placeholder: "Select a sport" },
-    ],
-  },
-  {
-    title: "Checkbox & Radio",
-    checklist: ["Accept terms and conditions", "Option One", "Option Two"],
-  },
-  {
-    title: "Tags & Badges",
-    tags: [
-      { label: "Running", variant: "cyan" },
-      { label: "Cycling", variant: "cyan" },
-      { label: "Triathlon", variant: "cyan" },
-      { label: "Urgent", variant: "orange" },
-      { label: "New Event", variant: "orange" },
-      { label: "Featured", variant: "orange" },
-    ],
-  },
-  {
-    title: "Toggles & Slider",
-    toggles: [
-      { label: "Dark Mode", active: true },
-      { label: "Distance Preference: 50 km", slider: true },
-    ],
+    title: "Expert Coaching",
+    description: "Access insights and guidance from professional coaches and sports scientists.",
   },
 ];
 
 export default function Index() {
   return (
-    <SiteLayout>
-      <section id="hero" className="container">
-        <div className="rounded-xl bg-hero-panel p-12 text-center shadow-card-elevated md:rounded-[2.5rem] md:p-16">
-          <p className="text-xs font-semibold uppercase tracking-[0.35em] text-primary-foreground/80">
-            FlowNation UI
-          </p>
-          <h1 className="mt-6 font-display text-4xl text-white sm:text-5xl">Design System</h1>
-          <p className="mx-auto mt-6 max-w-2xl text-base text-foreground/70 sm:text-lg">
-            The foundational elements and components that power FlowNation UI. A consistent visual language for a seamless experience.
-          </p>
-        </div>
-      </section>
-
-      <section id="colors" className="container mt-24 space-y-10 text-center">
-        <div className="space-y-4">
-          <h2 className="font-display text-3xl text-primary sm:text-4xl">Color Tokens</h2>
-          <p className="mx-auto max-w-2xl text-sm text-foreground/70">
-            Our core brand colors and their semantic usage across the application, ensuring visual consistency and impact.
-          </p>
-        </div>
-        <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-4">
-          {colorTokens.map((token) => (
-            <div key={token.name} className="rounded-xl border border-white/10 bg-secondary/70 p-6 text-left shadow-card-soft">
-              <div className="size-16 rounded-full" style={{ backgroundColor: token.hex }} />
-              <p className="mt-6 text-sm font-semibold text-white">{token.name}</p>
-              <p className="text-xs uppercase tracking-[0.3em] text-foreground/50">{token.hex}</p>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      <section id="typography" className="container mt-24 space-y-10 text-center">
-        <div className="space-y-4">
-          <h2 className="font-display text-3xl text-primary sm:text-4xl">Typography</h2>
-          <p className="mx-auto max-w-2xl text-sm text-foreground/70">
-            Our typefaces and their hierarchical application for headings and body text, ensuring readability and brand personality.
-          </p>
-        </div>
-        <div className="grid gap-6 md:grid-cols-3">
-          {typographyCards.map((card) => (
-            <article key={card.label} className="h-full rounded-xl border border-white/10 bg-secondary/70 p-8 text-left shadow-card-soft">
-              <p className="text-xs uppercase tracking-[0.35em] text-foreground/50">{card.label}</p>
-              <h3 className="mt-4 font-display text-2xl text-white">{card.title}</h3>
-              <p className="mt-4 text-sm text-foreground/70">{card.description}</p>
-            </article>
-          ))}
-        </div>
-      </section>
-
-      <section id="components" className="container mt-24 space-y-10 text-center">
-        <div className="space-y-4">
-          <h2 className="font-display text-3xl text-primary sm:text-4xl">Components</h2>
-          <p className="mx-auto max-w-2xl text-sm text-foreground/70">
-            Interactive elements and structural building blocks for dynamic and user-friendly interfaces.
-          </p>
-        </div>
-        <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
-          {componentCards.map((card) => (
-            <article key={card.title} className="rounded-xl border border-white/10 bg-secondary/70 p-8 text-left shadow-card-soft">
-              <h3 className="font-display text-xl text-white">{card.title}</h3>
-              {card.items ? (
-                <div className="mt-6 flex flex-wrap gap-3">
-                  {card.items.map((item) => (
-                    <span
-                      key={item.label}
-                      className={`inline-flex items-center gap-2 rounded-full px-4 py-2 text-xs font-semibold uppercase tracking-[0.35em] ${item.className}`}
-                    >
-                      {item.label}
-                    </span>
-                  ))}
-                </div>
-              ) : null}
-              {card.elements ? (
-                <div className="mt-6 space-y-3 text-sm text-foreground/70">
-                  {card.elements.map((element, index) => (
-                    <div key={`${card.title}-${element.placeholder}-${index}`} className="rounded-lg border border-white/10 bg-background/80 px-4 py-3">
-                      {element.multiline ? (
-                        <p className="text-left text-foreground/50">{element.placeholder}</p>
-                      ) : (
-                        <p className="text-left text-foreground/60">{element.placeholder}</p>
-                      )}
-                    </div>
-                  ))}
-                </div>
-              ) : null}
-              {card.checklist ? (
-                <ul className="mt-6 space-y-3 text-left text-sm text-foreground/70">
-                  {card.checklist.map((item) => (
-                    <li key={item} className="flex items-center gap-3">
-                      <CheckCircle2 className="size-4 text-primary" />
-                      <span>{item}</span>
-                    </li>
-                  ))}
-                </ul>
-              ) : null}
-              {card.tags ? (
-                <div className="mt-6 flex flex-wrap gap-2">
-                  {card.tags.map((tag) => (
-                    <span
-                      key={tag.label}
-                      className={`rounded-full px-3 py-1 text-xs font-semibold uppercase tracking-[0.35em] ${
-                        tag.variant === "cyan"
-                          ? "bg-primary/20 text-primary"
-                          : "bg-accent/20 text-accent"
-                      }`}
-                    >
-                      {tag.label}
-                    </span>
-                  ))}
-                </div>
-              ) : null}
-              {card.toggles ? (
-                <div className="mt-6 space-y-4 text-left text-sm text-foreground/70">
-                  {card.toggles.map((toggle) => (
-                    <div key={toggle.label} className="flex items-center justify-between rounded-lg border border-white/10 bg-background/80 px-4 py-3">
-                      <span>{toggle.label}</span>
-                      {toggle.slider ? (
-                        <div className="relative h-1 w-32 rounded-full bg-white/10">
-                          <div className="absolute inset-y-0 left-0 h-full w-3/4 rounded-full bg-primary" />
-                          <div className="absolute -top-1.5 left-3/4 h-4 w-4 rounded-full bg-primary" />
-                        </div>
-                      ) : (
-                        <span className="flex h-6 w-12 items-center rounded-full bg-primary/30">
-                          <span className="ml-auto mr-1 inline-block size-4 rounded-full bg-primary" />
-                        </span>
-                      )}
-                    </div>
-                  ))}
-                </div>
-              ) : null}
-            </article>
-          ))}
-        </div>
-      </section>
-
-      <section className="container mt-24">
-        <div className="rounded-xl border border-white/10 bg-secondary/70 p-10 text-left shadow-card-soft">
-          <h2 className="font-display text-2xl text-white">Keep Building with FlowNation</h2>
-          <p className="mt-4 max-w-2xl text-sm text-foreground/70">
-            Use these tokens and components across every page for visual harmony. Combine brand surfaces, interactive states, and purposeful typography to deliver elite experiences for every athlete.
-          </p>
-          <div className="mt-6 flex flex-wrap gap-3">
-            <Button className="rounded-full bg-primary px-6 text-xs font-semibold uppercase tracking-[0.35em] text-primary-foreground hover:bg-primary/90">
-              Download kit
-            </Button>
-            <Button
-              variant="ghost"
-              className="rounded-full border border-white/10 bg-transparent px-6 text-xs font-semibold uppercase tracking-[0.35em] text-foreground/70 hover:border-primary/40 hover:text-white"
-            >
-              <MessageCircle className="mr-2 size-4" /> Contact team
-            </Button>
-            <Button
-              variant="ghost"
-              className="rounded-full border border-white/10 bg-transparent px-6 text-xs font-semibold uppercase tracking-[0.35em] text-foreground/70 hover:border-primary/40 hover:text-white"
-            >
-              <Mail className="mr-2 size-4" /> Subscribe updates
-            </Button>
-            <Button
-              variant="ghost"
-              className="rounded-full border border-white/10 bg-transparent px-6 text-xs font-semibold uppercase tracking-[0.35em] text-foreground/70 hover:border-primary/40 hover:text-white"
-            >
-              <SlidersHorizontal className="mr-2 size-4" /> View guidelines
-            </Button>
+    <div className="min-h-screen bg-[#05060b] text-white">
+      <header className="border-b border-white/5 bg-black/40 backdrop-blur">
+        <div className="mx-auto flex max-w-6xl items-center justify-between gap-6 px-6 py-6">
+          <div className="flex items-center gap-3">
+            <span className="rounded-full bg-[#1f2333] px-3 py-1 text-xs font-bold uppercase tracking-[0.35em] text-white/80">FN</span>
+            <span className="font-display text-xl font-semibold tracking-[0.2em] text-white">FlowNationOnboarding2.1</span>
           </div>
+          <nav className="hidden items-center gap-8 text-sm font-semibold uppercase tracking-[0.3em] text-white/60 md:flex">
+            <a href="/" className="text-white">Home</a>
+            <a href="/community-proof" className="hover:text-white">Features</a>
+            <a href="/community" className="hover:text-white">Community</a>
+          </nav>
+          <div className="hidden items-center gap-4 md:flex">
+            <button className="rounded-full border border-white/10 px-4 py-2 text-xs font-semibold uppercase tracking-[0.3em] text-white/70">
+              Login
+            </button>
+            <a
+              href="#start"
+              className="rounded-full bg-[#4b5bfe] px-6 py-2 text-xs font-semibold uppercase tracking-[0.3em] text-white"
+            >
+              Sign Up
+            </a>
+          </div>
+          <button className="flex h-10 w-10 items-center justify-center rounded-full border border-white/10 text-white md:hidden">
+            <Menu className="size-5" />
+          </button>
         </div>
-      </section>
-    </SiteLayout>
+      </header>
+
+      <main className="mx-auto flex max-w-6xl flex-col gap-16 px-6 py-16">
+        <section className="relative overflow-hidden rounded-[2.5rem] border border-white/10 bg-[#121626] px-8 py-16 sm:px-16">
+          <div
+            className="absolute inset-0 -z-10 bg-[url('https://images.unsplash.com/photo-1529429617124-aeea22425632?auto=format&fit=crop&w=1800&q=80')] bg-cover bg-center"
+          />
+          <div className="absolute inset-0 -z-10 bg-gradient-to-r from-black/80 via-black/65 to-black/30" />
+          <div className="max-w-xl space-y-6">
+            <p className="text-sm font-semibold uppercase tracking-[0.3em] text-[#8fb0ff]">Cycling Mastery</p>
+            <h1 className="text-4xl font-semibold sm:text-5xl">Unleash Your Inner Cyclist</h1>
+            <p className="text-base text-white/80">
+              Join the FlowNation and redefine your limits on two wheels. Experience personalized training, connect with a global community, and achieve your cycling dreams.
+            </p>
+            <a
+              id="start"
+              href="/community-proof"
+              className="inline-flex items-center gap-3 rounded-full bg-[#4b5bfe] px-8 py-3 text-sm font-semibold uppercase tracking-[0.3em] text-white"
+            >
+              Start Your Journey
+              <ArrowRight className="size-4" />
+            </a>
+          </div>
+        </section>
+
+        <section className="space-y-10">
+          <header className="space-y-4 text-center">
+            <h2 className="text-3xl font-semibold">Explore Your Potential</h2>
+            <p className="mx-auto max-w-2xl text-base text-white/70">
+              Discover training paths tailored to every rider. Choose your discipline and unlock curated programs that elevate your performance.
+            </p>
+          </header>
+          <div className="grid gap-6 md:grid-cols-2">
+            {features.map((feature) => (
+              <article key={feature.title} className="rounded-3xl border border-white/10 bg-[#0f121b] p-6">
+                <h3 className="text-lg font-semibold text-white">{feature.title}</h3>
+                <p className="mt-3 text-sm text-white/70">{feature.description}</p>
+              </article>
+            ))}
+          </div>
+        </section>
+
+        <section className="rounded-[2rem] border border-white/10 bg-gradient-to-r from-[#1c1f30] via-[#151826] to-[#10131d] px-10 py-12 text-center">
+          <h2 className="text-3xl font-semibold text-white">Over 60 Athletes Joined This Week!</h2>
+          <p className="mt-4 text-base text-white/70">
+            Become part of a global movement, push your boundaries, and achieve your cycling dreams with FlowNation.
+          </p>
+          <a
+            href="/community"
+            className="mt-6 inline-flex items-center gap-3 rounded-full border border-white/20 px-6 py-3 text-xs font-semibold uppercase tracking-[0.3em] text-white"
+          >
+            Join the FlowNation Community Today!
+            <ArrowRight className="size-4" />
+          </a>
+        </section>
+
+        <section className="space-y-10">
+          <header className="space-y-4 text-center">
+            <h2 className="text-3xl font-semibold">Why FlowNation?</h2>
+          </header>
+          <div className="grid gap-6 md:grid-cols-3">
+            {benefits.map((benefit) => (
+              <article key={benefit.title} className="rounded-3xl border border-white/10 bg-[#0f121b] p-8">
+                <h3 className="text-lg font-semibold text-white">{benefit.title}</h3>
+                <p className="mt-3 text-sm text-white/70">{benefit.description}</p>
+              </article>
+            ))}
+          </div>
+        </section>
+      </main>
+
+      <footer className="mt-12 border-t border-white/10 bg-black/40">
+        <div className="mx-auto flex max-w-6xl flex-col gap-4 px-6 py-6 text-sm text-white/60 sm:flex-row sm:items-center sm:justify-between">
+          <div className="flex items-center gap-4">
+            <span className="font-semibold text-white">Company</span>
+            <span>Resources</span>
+            <span>Legal</span>
+          </div>
+          <p className="text-xs uppercase tracking-[0.3em] text-white/40">© FlowNation. All rights reserved.</p>
+        </div>
+      </footer>
+    </div>
   );
 }
