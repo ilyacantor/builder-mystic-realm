@@ -8,9 +8,9 @@ export default {
   theme: {
     container: {
       center: true,
-      padding: "2rem",
+      padding: "1.5rem",
       screens: {
-        "2xl": "1400px",
+        "2xl": "1280px",
       },
     },
     extend: {
@@ -28,10 +28,6 @@ export default {
           DEFAULT: "hsl(var(--secondary))",
           foreground: "hsl(var(--secondary-foreground))",
         },
-        destructive: {
-          DEFAULT: "hsl(var(--destructive))",
-          foreground: "hsl(var(--destructive-foreground))",
-        },
         muted: {
           DEFAULT: "hsl(var(--muted))",
           foreground: "hsl(var(--muted-foreground))",
@@ -40,69 +36,33 @@ export default {
           DEFAULT: "hsl(var(--accent))",
           foreground: "hsl(var(--accent-foreground))",
         },
-        popover: {
-          DEFAULT: "hsl(var(--popover))",
-          foreground: "hsl(var(--popover-foreground))",
+        destructive: {
+          DEFAULT: "hsl(var(--destructive))",
+          foreground: "hsl(var(--destructive-foreground))",
         },
         card: {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
-        sidebar: {
-          DEFAULT: "hsl(var(--sidebar-background))",
-          foreground: "hsl(var(--sidebar-foreground))",
-          primary: "hsl(var(--sidebar-primary))",
-          "primary-foreground": "hsl(var(--sidebar-primary-foreground))",
-          accent: "hsl(var(--sidebar-accent))",
-          "accent-foreground": "hsl(var(--sidebar-accent-foreground))",
-          border: "hsl(var(--sidebar-border))",
-          ring: "hsl(var(--sidebar-ring))",
-        },
       },
       borderRadius: {
-        lg: "var(--radius)",
-        md: "calc(var(--radius) - 4px)",
-        sm: "calc(var(--radius) - 8px)",
-      },
-      keyframes: {
-        "accordion-down": {
-          from: {
-            height: "0",
-          },
-          to: {
-            height: "var(--radix-accordion-content-height)",
-          },
-        },
-        "accordion-up": {
-          from: {
-            height: "var(--radix-accordion-content-height)",
-          },
-          to: {
-            height: "0",
-          },
-        },
-        shimmer: {
-          "0%": { transform: "translateX(-100%)" },
-          "100%": { transform: "translateX(100%)" },
-        },
-      },
-      animation: {
-        "accordion-down": "accordion-down 0.2s ease-out",
-        "accordion-up": "accordion-up 0.2s ease-out",
-        shimmer: "shimmer 3s infinite",
+        xl: "1.75rem",
+        lg: "1.25rem",
+        md: "1rem",
+        sm: "0.75rem",
       },
       fontFamily: {
-        sans: ["'Inter'", ...fontFamily.sans],
-        display: ["'Montserrat'", ...fontFamily.sans],
-      },
-      backgroundImage: {
-        "hero-gradient":
-          "radial-gradient(120% 120% at 20% 20%, hsl(var(--primary) / 0.6) 0%, transparent 60%), radial-gradient(120% 120% at 80% 0%, hsl(var(--accent) / 0.45) 0%, transparent 70%)",
-        "footer-gradient": "linear-gradient(90deg, #00BCD4 0%, #FF7F11 50%, #00BCD4 100%)",
+        sans: ["Inter", ...fontFamily.sans],
+        display: ["Quicksand", ...fontFamily.sans],
       },
       boxShadow: {
-        "card-soft": "0 24px 60px -32px hsl(var(--primary) / 0.35)",
-        "card-border": "inset 0 0 0 1px hsl(var(--border))",
+        "card-elevated": "0 28px 80px -40px rgba(0, 188, 196, 0.45)",
+        "card-soft": "0 18px 48px -30px rgba(13, 15, 20, 0.9)",
+      },
+      backgroundImage: {
+        "hero-panel":
+          "radial-gradient(circle at top left, rgba(0,188,196,0.35), transparent 60%), radial-gradient(circle at bottom right, rgba(255,111,0,0.3), transparent 55%)",
+        "footer-ribbon": "linear-gradient(90deg, #00BCC4 0%, #FF6F00 100%)",
       },
     },
   },
