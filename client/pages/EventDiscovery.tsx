@@ -1,4 +1,4 @@
-import { Search, Filter } from "lucide-react";
+import { FlowNationShell } from "@/components/layout/flownation-shell";
 
 const eventFilters = ["Cycling", "Triathlon", "Mehning", "Gravel"];
 
@@ -37,35 +37,7 @@ const events = [
 
 export default function EventDiscovery() {
   return (
-    <div className="min-h-screen bg-[#05060b] text-white">
-      <header className="border-b border-white/10 bg-gradient-to-r from-[#03b3d4] via-[#03c5d5] to-[#03d8c6]">
-        <div className="mx-auto flex max-w-6xl items-center justify-between gap-6 px-6 py-4">
-          <div className="flex items-center gap-3 text-black">
-            <span className="rounded-full bg-white/30 px-3 py-1 text-xs font-bold uppercase tracking-[0.3em]">FN</span>
-            <span className="font-display text-xl font-semibold tracking-[0.2em]">FlowNationUI</span>
-          </div>
-          <nav className="hidden items-center gap-8 text-sm font-semibold uppercase tracking-[0.3em] text-black lg:flex">
-            <a href="/" className="hover:text-white">Home</a>
-            <a href="/discover" className="text-white">Discover</a>
-            <a href="/community" className="hover:text-white">Community</a>
-            <a href="/dashboard" className="hover:text-white">Dashboard</a>
-            <a href="/profile" className="hover:text-white">Profile</a>
-          </nav>
-          <div className="hidden items-center gap-4 lg:flex">
-            <div className="relative">
-              <Search className="absolute left-4 top-1/2 size-4 -translate-y-1/2 text-black/50" />
-              <input
-                placeholder="Search events by name or location..."
-                className="h-10 rounded-full bg-white/40 pl-12 pr-4 text-sm text-black placeholder:text-black/60 focus:outline-none"
-              />
-            </div>
-            <button className="flex h-10 w-10 items-center justify-center rounded-full border border-black/20 bg-white/40 text-black">
-              <Filter className="size-4" />
-            </button>
-          </div>
-        </div>
-      </header>
-
+    <FlowNationShell>
       <main className="mx-auto flex max-w-6xl flex-col gap-12 px-6 py-12">
         <section className="overflow-hidden rounded-[2.5rem] border border-white/10">
           <div
@@ -161,6 +133,6 @@ export default function EventDiscovery() {
           <p className="text-xs uppercase tracking-[0.3em]">Discover Events</p>
         </div>
       </footer>
-    </div>
+    </FlowNationShell>
   );
 }
