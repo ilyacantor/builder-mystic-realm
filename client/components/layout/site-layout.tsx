@@ -1,5 +1,7 @@
 import type { PropsWithChildren } from "react";
 
+import type { PropsWithChildren } from "react";
+
 import { SiteFooter } from "./site-footer";
 import { SiteHeader } from "./site-header";
 
