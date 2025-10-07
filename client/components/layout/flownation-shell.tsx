@@ -9,6 +9,7 @@ const NAV_ITEMS = [
   { label: "Discover", href: "/discover" },
   { label: "Community", href: "/community" },
   { label: "Dashboard", href: "/dashboard" },
+  { label: "Persona", href: "/persona" },
   { label: "Profile", href: "/profile" },
 ];
 
