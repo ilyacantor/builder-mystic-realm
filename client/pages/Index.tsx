@@ -7,7 +7,6 @@ import {
   Bike,
   Calendar,
   Flame,
-  Globe,
   HeartPulse,
   MapPinned,
   MessageCircle,
