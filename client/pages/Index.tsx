@@ -253,19 +253,19 @@ export default function Index() {
             </Button>
           </div>
           <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-4">
-            {featureCards.map((card) => (
+            {featureCards.map(({ icon: Icon, title, description, highlight }) => (
               <article
-                key={card.title}
+                key={title}
                 className="group relative overflow-hidden rounded-3xl border border-white/10 bg-white/5 p-6 transition duration-500 hover:border-primary/60 hover:bg-white/10"
               >
                 <div className="absolute -right-8 top-8 h-28 w-28 rounded-full bg-primary/20 blur-3xl transition duration-500 group-hover:bg-primary/30" />
                 <div className="flex size-12 items-center justify-center rounded-2xl border border-white/10 bg-background/80 text-primary shadow-soft">
-                  <card.icon className="size-5" />
+                  <Icon className="size-5" />
                 </div>
-                <h3 className="mt-6 font-display text-2xl text-white">{card.title}</h3>
-                <p className="mt-3 text-sm leading-relaxed text-foreground/70">{card.description}</p>
+                <h3 className="mt-6 font-display text-2xl text-white">{title}</h3>
+                <p className="mt-3 text-sm leading-relaxed text-foreground/70">{description}</p>
                 <p className="mt-6 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs font-semibold uppercase tracking-[0.35em] text-foreground/60">
-                  {card.highlight}
+                  {highlight}
                 </p>
               </article>
             ))}
