@@ -35,7 +35,7 @@ export const SiteHeader = () => {
             <a
               key={item.href}
               href={item.href}
-              className="relative transition-colors hover:text-foreground"
+              className="group relative transition-colors hover:text-foreground"
             >
               {item.label}
               <span className="absolute inset-x-0 -bottom-1 h-px scale-x-0 bg-gradient-to-r from-primary/70 via-accent/70 to-primary/70 transition-transform duration-300 group-hover:scale-x-100" />
