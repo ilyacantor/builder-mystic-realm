@@ -92,7 +92,7 @@ export const SiteHeader = () => {
                 className="border border-white/10 bg-secondary/40 text-sm uppercase tracking-[0.3em] text-foreground/70 transition hover:border-primary/60 hover:bg-primary/10 hover:text-white"
                 onClick={closeMenu}
               >
-                <a href="mailto:hello@flownation.app">Login</a>
+                <a href="#profile">Login</a>
               </Button>
               <Button
                 asChild
