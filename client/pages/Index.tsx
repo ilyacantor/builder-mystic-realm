@@ -124,6 +124,7 @@ export default function Index() {
               </div>
               <div className="flex flex-col gap-4 sm:flex-row sm:items-center">
                 <Button
+                  type="button"
                   size="lg"
                   className="bg-gradient-to-r from-primary via-accent to-primary text-base text-primary-foreground shadow-glow transition hover:from-primary/90 hover:via-accent/90 hover:to-primary/90"
                 >
@@ -131,11 +132,12 @@ export default function Index() {
                   <ArrowRight className="size-4" />
                 </Button>
                 <Button
+                  asChild
                   variant="ghost"
                   size="lg"
                   className="border border-white/10 bg-white/5 text-base text-foreground/80 transition hover:bg-white/10 hover:text-foreground"
                 >
-                  View Documentation
+                  <a href="/#insights">View Documentation</a>
                 </Button>
               </div>
               <div className="flex flex-wrap items-center gap-8 text-sm text-foreground/60">
@@ -245,11 +247,14 @@ export default function Index() {
               </p>
             </div>
             <Button
+              asChild
               variant="ghost"
               className="self-start border border-white/10 bg-white/5 text-foreground/70 transition hover:bg-white/10 hover:text-foreground"
             >
-              Explore full platform
-              <ArrowRight className="size-4" />
+              <a href="/#workflow" className="inline-flex items-center gap-2">
+                Explore full platform
+                <ArrowRight className="size-4" />
+              </a>
             </Button>
           </div>
           <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-4">
@@ -392,6 +397,7 @@ export default function Index() {
                   ))}
                 </div>
                 <Button
+                  type="button"
                   className="mt-6 w-full bg-gradient-to-r from-primary via-accent to-primary text-primary-foreground shadow-glow transition hover:from-primary/90 hover:via-accent/90 hover:to-primary/90"
                 >
                   Generate training job
@@ -440,6 +446,7 @@ export default function Index() {
               </div>
               <div className="flex flex-col gap-4 sm:flex-row sm:items-center">
                 <Button
+                  type="button"
                   size="lg"
                   className="bg-gradient-to-r from-primary via-accent to-primary text-base text-primary-foreground shadow-glow transition hover:from-primary/90 hover:via-accent/90 hover:to-primary/90"
                 >
@@ -447,11 +454,12 @@ export default function Index() {
                   <ArrowRight className="size-4" />
                 </Button>
                 <Button
+                  asChild
                   variant="ghost"
                   size="lg"
                   className="border border-white/10 bg-white/5 text-base text-foreground/80 transition hover:bg-white/10 hover:text-foreground"
                 >
-                  Schedule onboarding
+                  <a href="mailto:hello@modelcanvas.ai">Schedule onboarding</a>
                 </Button>
               </div>
             </div>
