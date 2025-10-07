@@ -1,3 +1,5 @@
+import { FlowNationShell } from "@/components/layout/flownation-shell";
+
 const quickStats = [
   { title: "Today's Distance", value: "25 mi" },
   { title: "Active Hours", value: "2.5 h" },
@@ -80,30 +82,7 @@ const integrations = [
 
 export default function YourFlowNation() {
   return (
-    <div className="min-h-screen bg-[#05060b] text-white">
-      <header className="border-b border-white/10 bg-black/40 backdrop-blur">
-        <div className="mx-auto flex max-w-6xl items-center justify-between gap-6 px-6 py-6">
-          <div className="flex items-center gap-3">
-            <span className="rounded-full bg-[#1f2333] px-3 py-1 text-xs font-bold uppercase tracking-[0.35em] text-white/80">FN</span>
-            <span className="font-display text-xl font-semibold tracking-[0.2em] text-white">FlowNation</span>
-          </div>
-          <nav className="hidden items-center gap-8 text-sm font-semibold uppercase tracking-[0.3em] text-white/60 lg:flex">
-            <a href="/" className="hover:text-white">Home</a>
-            <a href="/discover" className="hover:text-white">Discover</a>
-            <a href="/community" className="hover:text-white">Community</a>
-            <a href="/your-flownation" className="text-white">Gear</a>
-          </nav>
-          <div className="hidden items-center gap-4 lg:flex">
-            <button className="flex h-10 w-10 items-center justify-center rounded-full border border-white/10 text-white">•</button>
-            <img
-              src="https://api.dicebear.com/7.x/thumbs/svg?seed=Alex"
-              alt="Alex"
-              className="size-10 rounded-full border-2 border-white/20"
-            />
-          </div>
-        </div>
-      </header>
-
+    <FlowNationShell>
       <main className="mx-auto flex max-w-6xl flex-col gap-10 px-6 py-12">
         <section className="space-y-6">
           <div className="flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
@@ -228,6 +207,6 @@ export default function YourFlowNation() {
           <p className="text-xs uppercase tracking-[0.3em] text-white/40">Powered by athletes. Built for the endurance community.</p>
         </div>
       </footer>
-    </div>
+    </FlowNationShell>
   );
 }
