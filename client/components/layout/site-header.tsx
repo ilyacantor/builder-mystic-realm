@@ -44,26 +44,31 @@ export const SiteHeader = () => {
         </nav>
         <div className="hidden items-center gap-3 lg:flex">
           <Button
+            asChild
             variant="ghost"
             size="sm"
             className="border border-white/10 bg-white/5 text-xs uppercase tracking-[0.3em] text-foreground/70 transition hover:bg-white/10 hover:text-foreground"
           >
-            Docs
+            <a href="/#insights">Docs</a>
           </Button>
           <Button
+            asChild
             size="sm"
             className="bg-gradient-to-r from-primary via-accent to-primary text-primary-foreground shadow-glow transition hover:from-primary/90 hover:via-accent/90 hover:to-primary/90"
           >
-            Launch Studio
+            <a href="/#cta">Launch Studio</a>
           </Button>
         </div>
         <div className="flex items-center gap-3 lg:hidden">
           <Button
+            asChild
             variant="ghost"
             size="sm"
             className="border border-white/10 bg-white/5 text-xs uppercase tracking-[0.3em] text-foreground/70 transition hover:bg-white/10 hover:text-foreground"
           >
-            Docs
+            <a href="/#insights" onClick={closeMenu}>
+              Docs
+            </a>
           </Button>
           <Button
             variant="ghost"
@@ -90,10 +95,12 @@ export const SiteHeader = () => {
               </a>
             ))}
             <Button
+              asChild
               className="bg-gradient-to-r from-primary via-accent to-primary text-primary-foreground shadow-glow transition hover:from-primary/90 hover:via-accent/90 hover:to-primary/90"
-              onClick={closeMenu}
             >
-              Launch Studio
+              <a href="/#cta" onClick={closeMenu}>
+                Launch Studio
+              </a>
             </Button>
           </div>
         </div>
