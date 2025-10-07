@@ -1,3 +1,5 @@
+import { FlowNationShell } from "@/components/layout/flownation-shell";
+
 const marquee = [
   "Sarah just completed a 100km road ride!",
   "New event: Mountain Epic added near you",
@@ -56,36 +58,7 @@ const integrations = [
 
 export default function PersonaDemo() {
   return (
-    <div className="min-h-screen bg-[#05060b] text-white">
-      <header className="border-b border-white/10 bg-gradient-to-r from-[#03b3d4] via-[#03c5d5] to-[#03d8c6]">
-        <div className="mx-auto flex max-w-6xl items-center justify-between gap-6 px-6 py-4">
-          <div className="flex items-center gap-3 text-black">
-            <span className="rounded-full bg-white/30 px-3 py-1 text-xs font-bold uppercase tracking-[0.3em]">FN</span>
-            <span className="font-display text-xl font-semibold tracking-[0.2em]">FlowNation</span>
-          </div>
-          <nav className="hidden items-center gap-6 text-sm font-semibold uppercase tracking-[0.3em] text-black lg:flex">
-            <a href="/persona" className="text-white">Explore</a>
-            <a href="/dashboard" className="hover:text-white">My Dashboard</a>
-            <a href="/community" className="hover:text-white">Community</a>
-            <a href="/shop" className="hover:text-white">Shop</a>
-          </nav>
-          <div className="hidden items-center gap-3 lg:flex">
-            <button className="flex h-10 w-10 items-center justify-center rounded-full border border-black/20 bg-white/40 text-black">
-              •
-            </button>
-            <button className="flex h-10 w-10 items-center justify-center rounded-full border border-black/20 bg-white/40 text-black">
-              •
-            </button>
-            <a
-              href="/events"
-              className="rounded-full bg-[#00bcc4] px-5 py-2 text-xs font-semibold uppercase tracking-[0.3em] text-black"
-            >
-              Create Event
-            </a>
-          </div>
-        </div>
-      </header>
-
+    <FlowNationShell>
       <main className="mx-auto flex max-w-6xl flex-col gap-12 px-6 py-12">
         <section className="space-y-8">
           <div className="rounded-[2.5rem] border border-white/10 bg-[url('https://images.unsplash.com/photo-1523419409543-0c1df022bdd6?auto=format&fit=crop&w=1800&q=80')] bg-cover bg-center p-12">
@@ -240,6 +213,6 @@ export default function PersonaDemo() {
           <p className="text-xs uppercase tracking-[0.3em] text-white/40">© FlowNation. All rights reserved.</p>
         </div>
       </footer>
-    </div>
+    </FlowNationShell>
   );
 }
