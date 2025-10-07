@@ -1,4 +1,5 @@
 import type { Config } from "tailwindcss";
+import { fontFamily } from "tailwindcss/defaultTheme";
 
 export default {
   darkMode: ["class"],
@@ -84,6 +85,20 @@ export default {
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
+      },
+      fontFamily: {
+        sans: ["'Inter'", ...fontFamily.sans],
+        display: ["'Space Grotesk'", ...fontFamily.sans],
+      },
+      backgroundImage: {
+        "hero-grid":
+          "radial-gradient(circle at 20% 20%, hsl(var(--primary) / 0.22), transparent 55%), radial-gradient(circle at 80% 0%, hsl(var(--accent) / 0.25), transparent 60%)",
+        mesh:
+          "linear-gradient(135deg, hsl(var(--primary) / 0.18) 0%, transparent 45%), linear-gradient(215deg, hsl(var(--accent) / 0.12) 10%, transparent 55%)",
+      },
+      boxShadow: {
+        glow: "0 32px 120px -40px hsl(var(--primary) / 0.8)",
+        soft: "0 18px 60px -30px hsl(var(--foreground) / 0.12)",
       },
     },
   },
