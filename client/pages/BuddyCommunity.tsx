@@ -1,3 +1,4 @@
+import { FlowNationShell } from "@/components/layout/flownation-shell";
 import { Search, SlidersHorizontal, Twitter, Instagram, Linkedin, Youtube } from "lucide-react";
 
 const buddies = [
@@ -108,45 +109,7 @@ const avatar = (seed: string) => `https://api.dicebear.com/7.x/thumbs/svg?seed=$
 
 export default function BuddyCommunity() {
   return (
-    <div className="min-h-screen bg-[#05060b] text-white">
-      <header className="border-b border-white/10 bg-gradient-to-r from-[#03b3d4] via-[#03c5d5] to-[#03d8c6]">
-        <div className="mx-auto flex max-w-6xl items-center justify-between gap-6 px-6 py-4">
-          <div className="flex items-center gap-3 text-black">
-            <span className="rounded-full bg-white/30 px-3 py-1 text-xs font-bold uppercase tracking-[0.3em]">FN</span>
-            <span className="font-display text-xl font-semibold tracking-[0.2em]">FlowNationUI</span>
-          </div>
-          <nav className="hidden items-center gap-8 text-sm font-semibold uppercase tracking-[0.3em] text-black lg:flex">
-            <a href="/" className="hover:text-white">Home</a>
-            <a href="/discover" className="hover:text-white">Discover</a>
-            <a href="/community" className="text-white">Community</a>
-            <a href="/dashboard" className="hover:text-white">Dashboard</a>
-            <a href="/profile" className="hover:text-white">Profile</a>
-          </nav>
-          <div className="hidden items-center gap-4 lg:flex">
-            <div className="relative">
-              <Search className="absolute left-4 top-1/2 size-4 -translate-y-1/2 text-black/50" />
-              <input
-                placeholder="Search buddies by name or interests..."
-                className="h-10 rounded-full bg-white/40 pl-12 pr-4 text-sm text-black placeholder:text-black/60 focus:outline-none"
-              />
-            </div>
-            <button className="flex h-10 w-10 items-center justify-center rounded-full border border-black/20 bg-white/40 text-black">
-              <SlidersHorizontal className="size-4" />
-            </button>
-          </div>
-        </div>
-        <div className="mx-auto flex max-w-6xl flex-col gap-4 px-6 pb-6 text-black lg:hidden">
-          <div className="relative">
-            <Search className="absolute left-4 top-1/2 size-4 -translate-y-1/2 text-black/50" />
-            <input
-              placeholder="Search buddies by name or interests..."
-              className="h-11 w-full rounded-full bg-white/40 pl-12 pr-4 text-sm text-black placeholder:text-black/60 focus:outline-none"
-            />
-          </div>
-          <button className="flex items-center justify-center gap-2 rounded-full border border-black/20 bg-white/40 py-3 text-sm font-semibold uppercase tracking-[0.3em]">Filters</button>
-        </div>
-      </header>
-
+    <FlowNationShell>
       <main className="mx-auto flex max-w-6xl flex-col gap-14 px-6 py-12">
         <section className="flex flex-col gap-4">
           <div className="flex flex-wrap items-center gap-4">
@@ -271,6 +234,6 @@ export default function BuddyCommunity() {
           </div>
         </div>
       </footer>
-    </div>
+    </FlowNationShell>
   );
 }
