@@ -132,7 +132,10 @@ export default function Index() {
                 ))}
               </div>
             </div>
-            <div className="grid w-full max-w-md gap-4 rounded-[28px] border border-white/5 bg-background/70 p-6 text-sm text-foreground/70">
+            <div
+              id="dashboard"
+              className="grid w-full max-w-md gap-4 rounded-[28px] border border-white/5 bg-background/70 p-6 text-sm text-foreground/70"
+            >
               <div className="flex items-center justify-between rounded-2xl border border-white/5 bg-secondary/70 px-4 py-3">
                 <div>
                   <p className="text-xs uppercase tracking-[0.35em] text-foreground/50">Today&apos;s Focus</p>
