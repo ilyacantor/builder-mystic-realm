@@ -10,6 +10,7 @@ import {
   LineChart,
   Rocket,
   ShieldCheck,
+  SlidersHorizontal,
   Sparkles,
   Timer,
 } from "lucide-react";
