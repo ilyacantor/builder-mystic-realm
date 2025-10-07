@@ -4,7 +4,7 @@ import { Bike, Menu, Search, UserRound, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const NAV_ITEMS = [
-  { label: "Explore", href: "#home" },
+  { label: "Explore", href: "#local" },
   { label: "My Dashboard", href: "#dashboard" },
   { label: "Community", href: "#community" },
   { label: "Shop", href: "#gear" },
