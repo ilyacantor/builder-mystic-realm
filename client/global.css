@@ -40,6 +40,12 @@
     --input: 210 20% 24%;
     --ring: 187 100% 41%;
 
+    --color-primary: #00bcd4;
+    --color-accent: #ff7f11;
+    --color-bg: #0a0a0a;
+    --color-text: #ffffff;
+    --color-muted: #b0b0b0;
+
     --radius: 1.25rem;
 
     --sidebar-background: 0 0% 6%;
