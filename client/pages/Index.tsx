@@ -4,7 +4,6 @@ import {
   Bike,
   CalendarDays,
   ChevronRight,
-  Compass,
   Gauge,
   MapPin,
   MessageCircle,
