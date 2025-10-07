@@ -43,20 +43,26 @@ export const SiteHeader = () => {
           ))}
         </nav>
         <div className="hidden items-center gap-3 lg:flex">
+          <button
+            type="button"
+            className="flex size-10 items-center justify-center rounded-full border border-white/10 bg-secondary/50 text-white transition hover:border-primary/50 hover:text-primary"
+            aria-label="Search"
+          >
+            <Search className="size-4" />
+          </button>
+          <button
+            type="button"
+            className="flex size-10 items-center justify-center rounded-full border border-white/10 bg-secondary/50 text-white transition hover:border-primary/50 hover:text-primary"
+            aria-label="Account"
+          >
+            <UserRound className="size-4" />
+          </button>
           <Button
             asChild
-            variant="ghost"
             size="sm"
-            className="border border-white/10 bg-secondary/40 px-5 text-xs uppercase tracking-[0.35em] text-foreground/70 transition hover:border-primary/60 hover:bg-primary/10 hover:text-white"
+            className="bg-primary px-6 text-xs font-semibold uppercase tracking-[0.32em] text-primary-foreground shadow-[0_20px_40px_-24px_rgba(0,188,212,0.8)] transition hover:bg-primary/90"
           >
-            <a href="#profile">Login</a>
-          </Button>
-          <Button
-            asChild
-            size="sm"
-            className="bg-primary px-6 text-xs font-semibold uppercase tracking-[0.3em] text-primary-foreground shadow-[0_20px_40px_-24px_rgba(0,188,212,0.8)] transition hover:bg-primary/90"
-          >
-            <a href="#cta">Sign Up</a>
+            <a href="#cta">Create Event</a>
           </Button>
         </div>
         <div className="flex items-center gap-3 lg:hidden">
@@ -86,19 +92,25 @@ export const SiteHeader = () => {
             ))}
             <div className="flex flex-col gap-3">
               <Button
-                asChild
                 variant="ghost"
                 className="border border-white/10 bg-secondary/40 text-sm uppercase tracking-[0.3em] text-foreground/70 transition hover:border-primary/60 hover:bg-primary/10 hover:text-white"
                 onClick={closeMenu}
               >
-                <a href="#profile">Login</a>
+                Search
+              </Button>
+              <Button
+                variant="ghost"
+                className="border border-white/10 bg-secondary/40 text-sm uppercase tracking-[0.3em] text-foreground/70 transition hover:border-primary/60 hover:bg-primary/10 hover:text-white"
+                onClick={closeMenu}
+              >
+                Account
               </Button>
               <Button
                 asChild
                 className="bg-primary text-sm uppercase tracking-[0.3em] text-primary-foreground"
                 onClick={closeMenu}
               >
-                <a href="#cta">Sign Up</a>
+                <a href="#cta">Create Event</a>
               </Button>
             </div>
           </div>
