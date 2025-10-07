@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Bike, Menu, X } from "lucide-react";
+import { Bike, Menu, Search, UserRound, X } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 
