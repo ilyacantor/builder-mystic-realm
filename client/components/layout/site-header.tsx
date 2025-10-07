@@ -1,116 +1,92 @@
 import { useState } from "react";
-import { Bike, Menu, Search, UserRound, X } from "lucide-react";
+import { Menu, Search, UserRound, X } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 
 const NAV_ITEMS = [
-  { label: "Explore", href: "#local" },
-  { label: "My Dashboard", href: "#dashboard" },
-  { label: "Community", href: "#community" },
-  { label: "Shop", href: "#gear" },
+  { label: "Home", href: "#hero" },
+  { label: "Discover", href: "#colors" },
+  { label: "Community", href: "#typography" },
+  { label: "Dashboard", href: "#components" },
+  { label: "Profile", href: "#footer" },
 ];
 
 export const SiteHeader = () => {
   const [open, setOpen] = useState(false);
 
-  const closeMenu = () => setOpen(false);
+  const toggle = () => setOpen((prev) => !prev);
+  const close = () => setOpen(false);
 
   return (
-    <header className="sticky top-0 z-50 border-b border-white/5 bg-background/80 backdrop-blur-xl">
-      <div className="container flex h-20 items-center justify-between gap-6">
-        <a
-          href="/#home"
-          className="group flex items-center gap-3 text-sm font-semibold uppercase tracking-[0.5em] text-foreground/70"
-          onClick={closeMenu}
-        >
-          <span className="rounded-full bg-gradient-to-br from-primary/20 via-primary/40 to-primary/20 p-2 text-primary shadow-[0_10px_40px_-20px_rgba(0,188,212,0.9)] transition duration-300 group-hover:scale-105 group-hover:from-primary/30 group-hover:via-primary/50">
-            <Bike className="size-4" />
-          </span>
-          <span className="font-display text-xl tracking-[0.08em] text-white">
-            FlowNation
-          </span>
+    <header className="relative z-40 w-full border-b border-black/10 bg-[#00bcc4] text-black shadow-[0_12px_30px_-20px_rgba(0,0,0,0.45)]">
+      <div className="container flex h-16 items-center justify-between gap-4 text-sm font-semibold uppercase tracking-[0.3em]">
+        <a href="#hero" className="flex items-center gap-3 text-black" onClick={close}>
+          <span className="rounded-full bg-black/10 px-3 py-1 text-xs font-bold">FN</span>
+          <span className="font-display text-base tracking-[0.18em]">FlowNationUI</span>
         </a>
-        <nav className="hidden items-center gap-8 text-sm font-medium text-foreground/80 lg:flex">
+        <nav className="hidden items-center gap-8 lg:flex">
           {NAV_ITEMS.map((item) => (
             <a
               key={item.href}
               href={item.href}
-              className="group relative transition-colors hover:text-white"
+              className="transition hover:text-white"
             >
               {item.label}
-              <span className="absolute inset-x-0 -bottom-1 h-0.5 scale-x-0 bg-gradient-to-r from-primary via-accent to-primary transition-transform duration-300 group-hover:scale-x-100" />
             </a>
           ))}
         </nav>
         <div className="hidden items-center gap-3 lg:flex">
           <button
             type="button"
-            className="flex size-10 items-center justify-center rounded-full border border-white/10 bg-secondary/50 text-white transition hover:border-primary/50 hover:text-primary"
             aria-label="Search"
+            className="flex h-10 w-10 items-center justify-center rounded-full border border-black/10 bg-white/40 text-black transition hover:border-white/40 hover:text-white"
           >
             <Search className="size-4" />
           </button>
           <button
             type="button"
-            className="flex size-10 items-center justify-center rounded-full border border-white/10 bg-secondary/50 text-white transition hover:border-primary/50 hover:text-primary"
             aria-label="Account"
+            className="flex h-10 w-10 items-center justify-center rounded-full border border-black/10 bg-white/40 text-black transition hover:border-white/40 hover:text-white"
           >
             <UserRound className="size-4" />
           </button>
-          <Button
-            asChild
-            size="sm"
-            className="bg-primary px-6 text-xs font-semibold uppercase tracking-[0.32em] text-primary-foreground shadow-[0_20px_40px_-24px_rgba(0,188,212,0.8)] transition hover:bg-primary/90"
-          >
-            <a href="#cta">Create Event</a>
-          </Button>
         </div>
-        <div className="flex items-center gap-3 lg:hidden">
-          <Button
-            variant="ghost"
-            size="icon"
-            className="border border-white/10 bg-secondary/40 text-white hover:bg-secondary/60"
-            onClick={() => setOpen((prev) => !prev)}
-            aria-label={open ? "Close navigation" : "Open navigation"}
-          >
-            {open ? <X className="size-5" /> : <Menu className="size-5" />}
-          </Button>
-        </div>
+        <button
+          type="button"
+          className="flex h-10 w-10 items-center justify-center rounded-full border border-black/20 bg-white/40 text-black transition hover:border-white/40 hover:text-white lg:hidden"
+          onClick={toggle}
+          aria-label={open ? "Close navigation" : "Open navigation"}
+        >
+          {open ? <X className="size-5" /> : <Menu className="size-5" />}
+        </button>
       </div>
       {open ? (
-        <div className="border-t border-white/5 bg-background/90 backdrop-blur-xl lg:hidden">
-          <div className="container flex flex-col gap-4 py-6">
+        <div className="border-t border-black/10 bg-[#00bcc4] text-black lg:hidden">
+          <div className="container flex flex-col gap-4 py-4">
             {NAV_ITEMS.map((item) => (
               <a
                 key={item.href}
                 href={item.href}
-                className="text-base font-medium text-foreground/80 transition hover:text-white"
-                onClick={closeMenu}
+                className="uppercase tracking-[0.3em]"
+                onClick={close}
               >
                 {item.label}
               </a>
             ))}
-            <div className="flex flex-col gap-3">
+            <div className="flex items-center gap-3">
               <Button
                 variant="ghost"
-                className="border border-white/10 bg-secondary/40 text-sm uppercase tracking-[0.3em] text-foreground/70 transition hover:border-primary/60 hover:bg-primary/10 hover:text-white"
-                onClick={closeMenu}
+                className="w-full border border-black/20 bg-white/40 text-xs uppercase tracking-[0.3em] text-black hover:border-white/40 hover:text-white"
+                onClick={close}
               >
                 Search
               </Button>
               <Button
                 variant="ghost"
-                className="border border-white/10 bg-secondary/40 text-sm uppercase tracking-[0.3em] text-foreground/70 transition hover:border-primary/60 hover:bg-primary/10 hover:text-white"
-                onClick={closeMenu}
+                className="w-full border border-black/20 bg-white/40 text-xs uppercase tracking-[0.3em] text-black hover:border-white/40 hover:text-white"
+                onClick={close}
               >
                 Account
-              </Button>
-              <Button
-                asChild
-                className="bg-primary text-sm uppercase tracking-[0.3em] text-primary-foreground"
-                onClick={closeMenu}
-              >
-                <a href="#cta">Create Event</a>
               </Button>
             </div>
           </div>
