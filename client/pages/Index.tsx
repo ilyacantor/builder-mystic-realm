@@ -1,4 +1,5 @@
-import { ArrowRight, Menu } from "lucide-react";
+import { FlowNationShell } from "@/components/layout/flownation-shell";
+import { ArrowRight } from "lucide-react";
 
 const features = [
   {
@@ -36,35 +37,7 @@ const benefits = [
 
 export default function Index() {
   return (
-    <div className="min-h-screen bg-[#05060b] text-white">
-      <header className="border-b border-white/5 bg-black/40 backdrop-blur">
-        <div className="mx-auto flex max-w-6xl items-center justify-between gap-6 px-6 py-6">
-          <div className="flex items-center gap-3">
-            <span className="rounded-full bg-[#1f2333] px-3 py-1 text-xs font-bold uppercase tracking-[0.35em] text-white/80">FN</span>
-            <span className="font-display text-xl font-semibold tracking-[0.2em] text-white">FlowNationOnboarding2.1</span>
-          </div>
-          <nav className="hidden items-center gap-8 text-sm font-semibold uppercase tracking-[0.3em] text-white/60 md:flex">
-            <a href="/" className="text-white">Home</a>
-            <a href="/community-proof" className="hover:text-white">Features</a>
-            <a href="/community" className="hover:text-white">Community</a>
-          </nav>
-          <div className="hidden items-center gap-4 md:flex">
-            <button className="rounded-full border border-white/10 px-4 py-2 text-xs font-semibold uppercase tracking-[0.3em] text-white/70">
-              Login
-            </button>
-            <a
-              href="#start"
-              className="rounded-full bg-[#4b5bfe] px-6 py-2 text-xs font-semibold uppercase tracking-[0.3em] text-white"
-            >
-              Sign Up
-            </a>
-          </div>
-          <button className="flex h-10 w-10 items-center justify-center rounded-full border border-white/10 text-white md:hidden">
-            <Menu className="size-5" />
-          </button>
-        </div>
-      </header>
-
+    <FlowNationShell>
       <main className="mx-auto flex max-w-6xl flex-col gap-16 px-6 py-16">
         <section className="relative overflow-hidden rounded-[2.5rem] border border-white/10 bg-[#121626] px-8 py-16 sm:px-16">
           <div
@@ -133,6 +106,6 @@ export default function Index() {
           <p className="text-xs uppercase tracking-[0.3em] text-white/40">© FlowNation. All rights reserved.</p>
         </div>
       </footer>
-    </div>
+    </FlowNationShell>
   );
 }
