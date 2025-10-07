@@ -57,11 +57,13 @@ const buddies = [
 const gear = [
   {
     title: "Aero Road Helmet",
-    description: "Streamlined design for speed-focused riders with enhanced ventilation.",
+    description:
+      "Streamlined design for speed-focused riders with enhanced ventilation.",
   },
   {
     title: "Trail Running Shoes",
-    description: "Grip and cushioning tuned for technical terrain and long adventures.",
+    description:
+      "Grip and cushioning tuned for technical terrain and long adventures.",
   },
   {
     title: "GPS Cycling Computer",
@@ -87,8 +89,12 @@ export default function YourFlowNation() {
         <section className="space-y-6">
           <div className="flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
             <div>
-              <p className="text-sm uppercase tracking-[0.3em] text-white/60">Your FlowNation</p>
-              <h1 className="text-4xl font-semibold text-white">Good morning, Alex — Recovery Day.</h1>
+              <p className="text-sm uppercase tracking-[0.3em] text-white/60">
+                Your FlowNation
+              </p>
+              <h1 className="text-4xl font-semibold text-white">
+                Good morning, Alex — Recovery Day.
+              </h1>
             </div>
             <div className="flex flex-wrap gap-3">
               <button className="rounded-full bg-[#ff6f00] px-5 py-2 text-xs font-semibold uppercase tracking-[0.3em] text-black">
@@ -104,9 +110,16 @@ export default function YourFlowNation() {
           </div>
           <div className="grid gap-4 md:grid-cols-3 xl:grid-cols-6">
             {quickStats.map((stat) => (
-              <div key={stat.title} className="rounded-3xl border border-white/10 bg-[#10131d] px-4 py-6">
-                <p className="text-xs uppercase tracking-[0.3em] text-white/60">{stat.title}</p>
-                <p className="mt-3 text-xl font-semibold text-white">{stat.value}</p>
+              <div
+                key={stat.title}
+                className="rounded-3xl border border-white/10 bg-[#10131d] px-4 py-6"
+              >
+                <p className="text-xs uppercase tracking-[0.3em] text-white/60">
+                  {stat.title}
+                </p>
+                <p className="mt-3 text-xl font-semibold text-white">
+                  {stat.value}
+                </p>
               </div>
             ))}
           </div>
@@ -114,7 +127,10 @@ export default function YourFlowNation() {
 
         <section className="grid gap-6 md:grid-cols-2 xl:grid-cols-4">
           {knowledge.map((item) => (
-            <article key={item.title} className="flex flex-col rounded-[1.75rem] border border-white/10 bg-[#10131d] px-6 py-6">
+            <article
+              key={item.title}
+              className="flex flex-col rounded-[1.75rem] border border-white/10 bg-[#10131d] px-6 py-6"
+            >
               <h2 className="text-lg font-semibold text-white">{item.title}</h2>
               <button className="mt-auto w-fit rounded-full border border-white/10 bg-[#0f121b] px-4 py-2 text-xs font-semibold uppercase tracking-[0.3em] text-white/70">
                 {item.label}
@@ -124,11 +140,18 @@ export default function YourFlowNation() {
         </section>
 
         <section className="rounded-[2rem] border border-white/10 bg-[#10131d] p-8">
-          <h2 className="text-base font-semibold text-white">Upcoming Events</h2>
+          <h2 className="text-base font-semibold text-white">
+            Upcoming Events
+          </h2>
           <div className="mt-6 grid gap-4 md:grid-cols-3">
             {upcoming.map((event) => (
-              <div key={event.title} className="rounded-2xl border border-white/10 bg-[#0f121b] px-4 py-4">
-                <p className="text-sm font-semibold text-white">{event.title}</p>
+              <div
+                key={event.title}
+                className="rounded-2xl border border-white/10 bg-[#0f121b] px-4 py-4"
+              >
+                <p className="text-sm font-semibold text-white">
+                  {event.title}
+                </p>
                 <p className="mt-2 text-sm text-white/60">{event.date}</p>
                 <p className="text-sm text-white/60">{event.location}</p>
               </div>
@@ -137,17 +160,26 @@ export default function YourFlowNation() {
         </section>
 
         <section className="rounded-[2rem] border border-white/10 bg-[#10131d] p-8">
-          <h2 className="text-base font-semibold text-white">Suggested Ride Buddies</h2>
+          <h2 className="text-base font-semibold text-white">
+            Suggested Ride Buddies
+          </h2>
           <div className="mt-6 grid gap-4 md:grid-cols-5">
             {buddies.map((buddy) => (
-              <div key={buddy.name} className="rounded-2xl border border-white/10 bg-[#0f121b] px-4 py-4 text-center">
+              <div
+                key={buddy.name}
+                className="rounded-2xl border border-white/10 bg-[#0f121b] px-4 py-4 text-center"
+              >
                 <img
                   src={`https://api.dicebear.com/7.x/thumbs/svg?seed=${encodeURIComponent(buddy.name)}`}
                   alt={buddy.name}
                   className="mx-auto size-12 rounded-full border-2 border-[#161b29]"
                 />
-                <p className="mt-3 text-sm font-semibold text-white">{buddy.name}</p>
-                <p className="text-xs uppercase tracking-[0.3em] text-white/50">{buddy.discipline}</p>
+                <p className="mt-3 text-sm font-semibold text-white">
+                  {buddy.name}
+                </p>
+                <p className="text-xs uppercase tracking-[0.3em] text-white/50">
+                  {buddy.discipline}
+                </p>
                 <button className="mt-4 w-full rounded-full bg-[#ff6f00] px-4 py-2 text-xs font-semibold uppercase tracking-[0.3em] text-black">
                   Add Connect
                 </button>
@@ -158,11 +190,15 @@ export default function YourFlowNation() {
 
         <section className="grid gap-6 md:grid-cols-2">
           <article className="rounded-[2rem] border border-white/10 bg-[#10131d] p-8">
-            <h2 className="text-base font-semibold text-white">Performance Insights</h2>
+            <h2 className="text-base font-semibold text-white">
+              Performance Insights
+            </h2>
             <div className="mt-6 h-52 rounded-2xl border border-white/10 bg-[#0f121b]" />
           </article>
           <article className="rounded-[2rem] border border-white/10 bg-[#10131d] p-8">
-            <h2 className="text-base font-semibold text-white">Weekly Mileage</h2>
+            <h2 className="text-base font-semibold text-white">
+              Weekly Mileage
+            </h2>
             <div className="mt-6 h-52 rounded-2xl border border-white/10 bg-[#0f121b]" />
           </article>
         </section>
@@ -171,7 +207,10 @@ export default function YourFlowNation() {
           <h2 className="text-base font-semibold text-white">Gear & Reviews</h2>
           <div className="mt-6 grid gap-4 md:grid-cols-4">
             {gear.map((item) => (
-              <div key={item.title} className="rounded-2xl border border-white/10 bg-[#0f121b] px-4 py-4">
+              <div
+                key={item.title}
+                className="rounded-2xl border border-white/10 bg-[#0f121b] px-4 py-4"
+              >
                 <p className="text-sm font-semibold text-white">{item.title}</p>
                 <p className="mt-2 text-sm text-white/60">{item.description}</p>
               </div>
@@ -183,8 +222,13 @@ export default function YourFlowNation() {
           <h2 className="text-base font-semibold text-white">Integrations</h2>
           <div className="mt-6 space-y-3">
             {integrations.map((integration) => (
-              <div key={integration.name} className="flex items-center justify-between rounded-2xl border border-white/10 bg-[#0f121b] px-4 py-3">
-                <p className="text-sm font-semibold text-white">{integration.name}</p>
+              <div
+                key={integration.name}
+                className="flex items-center justify-between rounded-2xl border border-white/10 bg-[#0f121b] px-4 py-3"
+              >
+                <p className="text-sm font-semibold text-white">
+                  {integration.name}
+                </p>
                 <div className="flex items-center gap-3">
                   <div className="h-16 w-24 rounded-xl border border-white/10 bg-[#10131d]" />
                   <button className="rounded-full border border-white/10 bg-[#10131d] px-4 py-2 text-xs font-semibold uppercase tracking-[0.3em] text-white/70">
@@ -204,7 +248,9 @@ export default function YourFlowNation() {
             <span>Community</span>
             <span>Gear Hub</span>
           </div>
-          <p className="text-xs uppercase tracking-[0.3em] text-white/40">Powered by athletes. Built for the endurance community.</p>
+          <p className="text-xs uppercase tracking-[0.3em] text-white/40">
+            Powered by athletes. Built for the endurance community.
+          </p>
         </div>
       </footer>
     </FlowNationShell>

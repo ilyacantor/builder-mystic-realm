@@ -40,9 +40,7 @@ export default function EventDiscovery() {
     <FlowNationShell>
       <main className="mx-auto flex max-w-6xl flex-col gap-12 px-6 py-12">
         <section className="overflow-hidden rounded-[2.5rem] border border-white/10">
-          <div
-            className="relative h-72 w-full bg-[url('https://images.unsplash.com/photo-1507831228884-93d43e8f26d2?auto=format&fit=crop&w=1800&q=80')] bg-cover bg-center"
-          >
+          <div className="relative h-72 w-full bg-[url('https://images.unsplash.com/photo-1507831228884-93d43e8f26d2?auto=format&fit=crop&w=1800&q=80')] bg-cover bg-center">
             <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-black/40" />
             <div className="absolute bottom-6 left-6 space-y-2">
               <span className="rounded-full bg-[#00bcc4]/20 px-3 py-1 text-xs font-semibold uppercase tracking-[0.3em] text-[#00bcc4]">
@@ -50,7 +48,10 @@ export default function EventDiscovery() {
               </span>
               <p className="text-sm text-white/80">Sat, Jun 22, 2024</p>
               <p className="text-sm text-white/80">100 km</p>
-              <a href="#events" className="text-sm font-semibold text-[#00bcc4]">
+              <a
+                href="#events"
+                className="text-sm font-semibold text-[#00bcc4]"
+              >
                 View Details
               </a>
             </div>
@@ -59,10 +60,14 @@ export default function EventDiscovery() {
 
         <section className="grid gap-10 lg:grid-cols-[1fr_1.2fr]">
           <div className="rounded-[2rem] border border-white/10 bg-[#10131d] p-8">
-            <h2 className="text-base font-semibold text-white">Filter Events</h2>
+            <h2 className="text-base font-semibold text-white">
+              Filter Events
+            </h2>
             <div className="mt-6 space-y-6">
               <div className="space-y-3">
-                <p className="text-sm font-semibold uppercase tracking-[0.3em] text-white/70">Sport Type</p>
+                <p className="text-sm font-semibold uppercase tracking-[0.3em] text-white/70">
+                  Sport Type
+                </p>
                 <div className="flex flex-wrap gap-3">
                   {eventFilters.map((filter) => (
                     <button
@@ -79,14 +84,18 @@ export default function EventDiscovery() {
                 </div>
               </div>
               <div className="space-y-3">
-                <p className="text-sm font-semibold uppercase tracking-[0.3em] text-white/70">Max Distance (km)</p>
+                <p className="text-sm font-semibold uppercase tracking-[0.3em] text-white/70">
+                  Max Distance (km)
+                </p>
                 <input
                   defaultValue="100"
                   className="w-full rounded-2xl border border-white/10 bg-[#0f121b] px-4 py-3 text-sm text-white/80 focus:border-[#00bcc4] focus:outline-none"
                 />
               </div>
               <div className="space-y-3">
-                <p className="text-sm font-semibold uppercase tracking-[0.3em] text-white/70">Location</p>
+                <p className="text-sm font-semibold uppercase tracking-[0.3em] text-white/70">
+                  Location
+                </p>
                 <input
                   placeholder="Anywhere"
                   className="w-full rounded-2xl border border-white/10 bg-[#0f121b] px-4 py-3 text-sm text-white/80 focus:border-[#00bcc4] focus:outline-none"
@@ -99,13 +108,20 @@ export default function EventDiscovery() {
           </div>
 
           <div className="space-y-6" id="events">
-            <h2 className="text-base font-semibold text-white">Upcoming Events</h2>
+            <h2 className="text-base font-semibold text-white">
+              Upcoming Events
+            </h2>
             <div className="space-y-4">
               {events.map((event) => (
-                <article key={event.name} className="rounded-[1.75rem] border border-white/10 bg-[#10131d] px-6 py-6">
+                <article
+                  key={event.name}
+                  className="rounded-[1.75rem] border border-white/10 bg-[#10131d] px-6 py-6"
+                >
                   <div className="flex flex-col gap-3 md:flex-row md:items-center md:justify-between">
                     <div>
-                      <h3 className="text-lg font-semibold text-white">{event.name}</h3>
+                      <h3 className="text-lg font-semibold text-white">
+                        {event.name}
+                      </h3>
                       <p className="text-sm text-white/70">{event.date}</p>
                     </div>
                     <div className="flex items-center gap-4 text-sm text-white/70">

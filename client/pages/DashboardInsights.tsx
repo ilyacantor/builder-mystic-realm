@@ -72,14 +72,23 @@ export default function DashboardInsights() {
             />
             <div>
               <h1 className="text-3xl font-semibold text-white">Alex</h1>
-              <p className="text-sm text-white/70">Functional Threshold Power</p>
+              <p className="text-sm text-white/70">
+                Functional Threshold Power
+              </p>
             </div>
           </div>
           <div className="mt-8 grid gap-4 sm:grid-cols-3">
             {metrics.map((metric) => (
-              <div key={metric.label} className="rounded-2xl border border-white/10 bg-[#0f121b] px-4 py-6 text-center">
-                <p className="text-2xl font-semibold text-white">{metric.value}</p>
-                <p className="mt-2 text-xs uppercase tracking-[0.3em] text-white/60">{metric.label}</p>
+              <div
+                key={metric.label}
+                className="rounded-2xl border border-white/10 bg-[#0f121b] px-4 py-6 text-center"
+              >
+                <p className="text-2xl font-semibold text-white">
+                  {metric.value}
+                </p>
+                <p className="mt-2 text-xs uppercase tracking-[0.3em] text-white/60">
+                  {metric.label}
+                </p>
               </div>
             ))}
           </div>
@@ -88,19 +97,30 @@ export default function DashboardInsights() {
         <section className="grid gap-6 lg:grid-cols-2">
           <article className="rounded-[2rem] border border-white/10 bg-[#10131d] p-8">
             <header className="flex items-center justify-between">
-              <h2 className="text-base font-semibold text-white">Weekly Mileage</h2>
-              <span className="text-xs uppercase tracking-[0.3em] text-white/50">Mileage (km)</span>
+              <h2 className="text-base font-semibold text-white">
+                Weekly Mileage
+              </h2>
+              <span className="text-xs uppercase tracking-[0.3em] text-white/50">
+                Mileage (km)
+              </span>
             </header>
             <div className="mt-8 flex h-56 items-end justify-between">
               {mileage.map((value, index) => (
-                <div key={mileageLabels[index]} className="flex w-full flex-col items-center">
+                <div
+                  key={mileageLabels[index]}
+                  className="flex w-full flex-col items-center"
+                >
                   <div className="relative flex h-full w-full items-end justify-center">
                     <div
                       className="w-12 rounded-t-full bg-gradient-to-t from-[#03d8c6] to-[#03b3d4]"
-                      style={{ height: `${(value / Math.max(...mileage)) * 100}%` }}
+                      style={{
+                        height: `${(value / Math.max(...mileage)) * 100}%`,
+                      }}
                     />
                   </div>
-                  <p className="mt-3 text-xs uppercase tracking-[0.3em] text-white/50">{mileageLabels[index]}</p>
+                  <p className="mt-3 text-xs uppercase tracking-[0.3em] text-white/50">
+                    {mileageLabels[index]}
+                  </p>
                 </div>
               ))}
             </div>
@@ -108,17 +128,26 @@ export default function DashboardInsights() {
 
           <article className="rounded-[2rem] border border-white/10 bg-[#10131d] p-8">
             <header className="flex items-center justify-between">
-              <h2 className="text-base font-semibold text-white">Average Power Trend</h2>
-              <span className="text-xs uppercase tracking-[0.3em] text-white/50">Average Power (W)</span>
+              <h2 className="text-base font-semibold text-white">
+                Average Power Trend
+              </h2>
+              <span className="text-xs uppercase tracking-[0.3em] text-white/50">
+                Average Power (W)
+              </span>
             </header>
             <div className="mt-8 grid h-56 grid-cols-5 items-end gap-4">
               {power.map((value, index) => (
-                <div key={powerLabels[index]} className="flex flex-col items-center">
+                <div
+                  key={powerLabels[index]}
+                  className="flex flex-col items-center"
+                >
                   <div
                     className="w-full rounded-t-xl bg-[#ff6f00]"
                     style={{ height: `${(value / Math.max(...power)) * 100}%` }}
                   />
-                  <p className="mt-3 text-xs uppercase tracking-[0.3em] text-white/50">{powerLabels[index]}</p>
+                  <p className="mt-3 text-xs uppercase tracking-[0.3em] text-white/50">
+                    {powerLabels[index]}
+                  </p>
                 </div>
               ))}
             </div>
@@ -127,32 +156,48 @@ export default function DashboardInsights() {
 
         <section className="grid gap-6 lg:grid-cols-2">
           <article className="rounded-[2rem] border border-white/10 bg-[#10131d] p-8">
-            <h2 className="text-base font-semibold text-white">Weekly Mileage</h2>
+            <h2 className="text-base font-semibold text-white">
+              Weekly Mileage
+            </h2>
             <div className="mt-8 flex h-56 items-end justify-between">
               {mileage.map((value, index) => (
-                <div key={mileageLabels[index]} className="flex w-full flex-col items-center">
+                <div
+                  key={mileageLabels[index]}
+                  className="flex w-full flex-col items-center"
+                >
                   <div className="relative flex h-full w-full items-end justify-center">
                     <div
                       className="w-12 rounded-t-full bg-gradient-to-t from-[#03d8c6] to-[#03b3d4]"
-                      style={{ height: `${(value / Math.max(...mileage)) * 100}%` }}
+                      style={{
+                        height: `${(value / Math.max(...mileage)) * 100}%`,
+                      }}
                     />
                   </div>
-                  <p className="mt-3 text-xs uppercase tracking-[0.3em] text-white/50">{mileageLabels[index]}</p>
+                  <p className="mt-3 text-xs uppercase tracking-[0.3em] text-white/50">
+                    {mileageLabels[index]}
+                  </p>
                 </div>
               ))}
             </div>
           </article>
 
           <article className="rounded-[2rem] border border-white/10 bg-[#10131d] p-8">
-            <h2 className="text-base font-semibold text-white">Average Power Trend</h2>
+            <h2 className="text-base font-semibold text-white">
+              Average Power Trend
+            </h2>
             <div className="mt-8 grid h-56 grid-cols-5 items-end gap-4">
               {power.map((value, index) => (
-                <div key={powerLabels[index]} className="flex flex-col items-center">
+                <div
+                  key={powerLabels[index]}
+                  className="flex flex-col items-center"
+                >
                   <div
                     className="w-full rounded-t-xl bg-[#ff6f00]"
                     style={{ height: `${(value / Math.max(...power)) * 100}%` }}
                   />
-                  <p className="mt-3 text-xs uppercase tracking-[0.3em] text-white/50">{powerLabels[index]}</p>
+                  <p className="mt-3 text-xs uppercase tracking-[0.3em] text-white/50">
+                    {powerLabels[index]}
+                  </p>
                 </div>
               ))}
             </div>
@@ -161,11 +206,18 @@ export default function DashboardInsights() {
 
         <section className="grid gap-6 lg:grid-cols-2">
           <article className="rounded-[2rem] border border-white/10 bg-[#10131d] p-8">
-            <h2 className="text-base font-semibold text-white">Recent Event Results</h2>
+            <h2 className="text-base font-semibold text-white">
+              Recent Event Results
+            </h2>
             <div className="mt-6 space-y-4">
               {events.map((event) => (
-                <div key={event.event} className="grid gap-4 rounded-2xl border border-white/10 bg-[#0f121b] px-4 py-4 sm:grid-cols-5">
-                  <p className="text-sm font-semibold text-white sm:col-span-2">{event.event}</p>
+                <div
+                  key={event.event}
+                  className="grid gap-4 rounded-2xl border border-white/10 bg-[#0f121b] px-4 py-4 sm:grid-cols-5"
+                >
+                  <p className="text-sm font-semibold text-white sm:col-span-2">
+                    {event.event}
+                  </p>
                   <p className="text-sm text-white/60">{event.date}</p>
                   <p className="text-sm text-white/60">{event.type}</p>
                   <div className="flex items-center justify-between text-sm text-white/60 sm:flex-col sm:items-start sm:gap-1">
@@ -178,7 +230,9 @@ export default function DashboardInsights() {
           </article>
 
           <article className="rounded-[2rem] border border-white/10 bg-[#10131d] p-8">
-            <h2 className="text-base font-semibold text-white">Badges & Achievements</h2>
+            <h2 className="text-base font-semibold text-white">
+              Badges & Achievements
+            </h2>
             <div className="mt-6 flex flex-wrap gap-3">
               {badges.map((badge) => (
                 <span

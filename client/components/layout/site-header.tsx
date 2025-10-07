@@ -20,9 +20,17 @@ export const SiteHeader = () => {
   return (
     <header className="relative z-40 w-full border-b border-black/10 bg-[#00bcc4] text-black shadow-[0_12px_30px_-20px_rgba(0,0,0,0.45)]">
       <div className="container flex h-16 items-center justify-between gap-4 text-sm font-semibold uppercase tracking-[0.3em]">
-        <a href="#hero" className="flex items-center gap-3 text-black" onClick={close}>
-          <span className="rounded-full bg-black/10 px-3 py-1 text-xs font-bold">FN</span>
-          <span className="font-display text-base tracking-[0.18em]">FlowNationUI</span>
+        <a
+          href="#hero"
+          className="flex items-center gap-3 text-black"
+          onClick={close}
+        >
+          <span className="rounded-full bg-black/10 px-3 py-1 text-xs font-bold">
+            FN
+          </span>
+          <span className="font-display text-base tracking-[0.18em]">
+            FlowNationUI
+          </span>
         </a>
         <nav className="hidden items-center gap-8 lg:flex">
           {NAV_ITEMS.map((item) => (

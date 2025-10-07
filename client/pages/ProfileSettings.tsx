@@ -26,7 +26,9 @@ export default function ProfileSettings() {
             <button
               key={item.label}
               className={`rounded-2xl px-4 py-3 text-left text-sm font-semibold uppercase tracking-[0.3em] ${
-                item.active ? "bg-[#00bcc4] text-black" : "bg-[#10131d] text-white/70"
+                item.active
+                  ? "bg-[#00bcc4] text-black"
+                  : "bg-[#10131d] text-white/70"
               }`}
             >
               {item.label}
@@ -44,7 +46,9 @@ export default function ProfileSettings() {
 
         <section className="flex-1 space-y-6">
           <article className="rounded-[2rem] border border-white/10 bg-[#10131d] p-8">
-            <h1 className="text-2xl font-semibold text-white">Profile Settings</h1>
+            <h1 className="text-2xl font-semibold text-white">
+              Profile Settings
+            </h1>
             <div className="mt-6 grid gap-6 lg:grid-cols-2">
               <div className="space-y-4">
                 <div className="flex items-center gap-4">
@@ -58,14 +62,18 @@ export default function ProfileSettings() {
                   </button>
                 </div>
                 <div className="space-y-3">
-                  <label className="text-xs font-semibold uppercase tracking-[0.3em] text-white/60">Full Name</label>
+                  <label className="text-xs font-semibold uppercase tracking-[0.3em] text-white/60">
+                    Full Name
+                  </label>
                   <input
                     defaultValue="Jane Doe"
                     className="w-full rounded-2xl border border-white/10 bg-[#0f121b] px-4 py-3 text-sm text-white/80 focus:border-[#00bcc4] focus:outline-none"
                   />
                 </div>
                 <div className="space-y-3">
-                  <label className="text-xs font-semibold uppercase tracking-[0.3em] text-white/60">Email Address</label>
+                  <label className="text-xs font-semibold uppercase tracking-[0.3em] text-white/60">
+                    Email Address
+                  </label>
                   <input
                     defaultValue="jane.doe@flow-nation.com"
                     className="w-full rounded-2xl border border-white/10 bg-[#0f121b] px-4 py-3 text-sm text-white/80 focus:border-[#00bcc4] focus:outline-none"
@@ -73,20 +81,29 @@ export default function ProfileSettings() {
                 </div>
               </div>
               <div className="space-y-3">
-                <label className="text-xs font-semibold uppercase tracking-[0.3em] text-white/60">About Me</label>
+                <label className="text-xs font-semibold uppercase tracking-[0.3em] text-white/60">
+                  About Me
+                </label>
                 <textarea
                   rows={6}
                   defaultValue="Passionate endurance athlete, always looking for the next challenge. Love cycling, running, and exploring new trails. Member of the FlowNation community since 2022."
                   className="w-full rounded-2xl border border-white/10 bg-[#0f121b] px-4 py-3 text-sm text-white/80 focus:border-[#00bcc4] focus:outline-none"
                 />
                 <div className="space-y-3">
-                  <p className="text-xs font-semibold uppercase tracking-[0.3em] text-white/60">Favorite Events/Sports</p>
+                  <p className="text-xs font-semibold uppercase tracking-[0.3em] text-white/60">
+                    Favorite Events/Sports
+                  </p>
                   <div className="flex flex-wrap gap-2">
-                    {"Cycling Triathlon Marathon Trail Running Gravel".split(" ").map((tag) => (
-                      <span key={tag} className="rounded-full bg-[#101c2a] px-4 py-2 text-xs font-semibold uppercase tracking-[0.3em] text-white/70">
-                        {tag}
-                      </span>
-                    ))}
+                    {"Cycling Triathlon Marathon Trail Running Gravel"
+                      .split(" ")
+                      .map((tag) => (
+                        <span
+                          key={tag}
+                          className="rounded-full bg-[#101c2a] px-4 py-2 text-xs font-semibold uppercase tracking-[0.3em] text-white/70"
+                        >
+                          {tag}
+                        </span>
+                      ))}
                   </div>
                 </div>
                 <button className="rounded-full border border-[#00bcc4] px-4 py-2 text-xs font-semibold uppercase tracking-[0.3em] text-[#00bcc4]">
@@ -97,11 +114,18 @@ export default function ProfileSettings() {
           </article>
 
           <article className="rounded-[2rem] border border-white/10 bg-[#10131d] p-8">
-            <h2 className="text-base font-semibold text-white">External Connections</h2>
+            <h2 className="text-base font-semibold text-white">
+              External Connections
+            </h2>
             <div className="mt-6 space-y-4">
               {connections.map((connection) => (
-                <div key={connection.name} className="flex items-center justify-between rounded-2xl border border-white/10 bg-[#0f121b] px-4 py-3">
-                  <p className="text-sm font-semibold text-white">{connection.name}</p>
+                <div
+                  key={connection.name}
+                  className="flex items-center justify-between rounded-2xl border border-white/10 bg-[#0f121b] px-4 py-3"
+                >
+                  <p className="text-sm font-semibold text-white">
+                    {connection.name}
+                  </p>
                   <button
                     className={`rounded-full px-4 py-2 text-xs font-semibold uppercase tracking-[0.3em] ${
                       connection.status === "Connected"
@@ -120,8 +144,13 @@ export default function ProfileSettings() {
             <h2 className="text-base font-semibold text-white">Preferences</h2>
             <div className="mt-6 space-y-4">
               {preferences.map((preference) => (
-                <div key={preference.label} className="flex items-center justify-between rounded-2xl border border-white/10 bg-[#0f121b] px-4 py-3">
-                  <p className="text-sm font-semibold text-white">{preference.label}</p>
+                <div
+                  key={preference.label}
+                  className="flex items-center justify-between rounded-2xl border border-white/10 bg-[#0f121b] px-4 py-3"
+                >
+                  <p className="text-sm font-semibold text-white">
+                    {preference.label}
+                  </p>
                   <span
                     className={`flex h-6 w-12 items-center rounded-full ${
                       preference.enabled ? "bg-[#00bcc4]/40" : "bg-white/10"
@@ -129,7 +158,9 @@ export default function ProfileSettings() {
                   >
                     <span
                       className={`size-4 rounded-full ${
-                        preference.enabled ? "ml-auto mr-1 bg-[#00bcc4]" : "ml-1 bg-white/40"
+                        preference.enabled
+                          ? "ml-auto mr-1 bg-[#00bcc4]"
+                          : "ml-1 bg-white/40"
                       }`}
                     />
                   </span>

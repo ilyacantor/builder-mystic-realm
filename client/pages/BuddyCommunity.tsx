@@ -1,5 +1,12 @@
 import { FlowNationShell } from "@/components/layout/flownation-shell";
-import { Search, SlidersHorizontal, Twitter, Instagram, Linkedin, Youtube } from "lucide-react";
+import {
+  Search,
+  SlidersHorizontal,
+  Twitter,
+  Instagram,
+  Linkedin,
+  Youtube,
+} from "lucide-react";
 
 const buddies = [
   {
@@ -105,7 +112,8 @@ const rides = [
   },
 ];
 
-const avatar = (seed: string) => `https://api.dicebear.com/7.x/thumbs/svg?seed=${encodeURIComponent(seed)}`;
+const avatar = (seed: string) =>
+  `https://api.dicebear.com/7.x/thumbs/svg?seed=${encodeURIComponent(seed)}`;
 
 export default function BuddyCommunity() {
   return (
@@ -121,24 +129,39 @@ export default function BuddyCommunity() {
               />
             </div>
             <div className="flex flex-wrap items-center gap-3">
-              <button className="rounded-full border border-white/10 bg-[#0f121b] px-6 py-3 text-sm font-semibold uppercase tracking-[0.3em] text-white/80">Ride Type</button>
-              <button className="rounded-full border border-white/10 bg-[#0f121b] px-6 py-3 text-sm font-semibold uppercase tracking-[0.3em] text-white/80">Distance</button>
-              <button className="rounded-full bg-[#00c7e5] px-6 py-3 text-sm font-semibold uppercase tracking-[0.3em] text-black">Social Preference</button>
+              <button className="rounded-full border border-white/10 bg-[#0f121b] px-6 py-3 text-sm font-semibold uppercase tracking-[0.3em] text-white/80">
+                Ride Type
+              </button>
+              <button className="rounded-full border border-white/10 bg-[#0f121b] px-6 py-3 text-sm font-semibold uppercase tracking-[0.3em] text-white/80">
+                Distance
+              </button>
+              <button className="rounded-full bg-[#00c7e5] px-6 py-3 text-sm font-semibold uppercase tracking-[0.3em] text-black">
+                Social Preference
+              </button>
             </div>
           </div>
         </section>
 
         <section className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
           {buddies.map((buddy) => (
-            <article key={buddy.name} className="rounded-3xl border border-white/8 bg-[#10131d] p-6 shadow-[0_28px_60px_-36px_rgba(0,0,0,0.8)]">
+            <article
+              key={buddy.name}
+              className="rounded-3xl border border-white/8 bg-[#10131d] p-6 shadow-[0_28px_60px_-36px_rgba(0,0,0,0.8)]"
+            >
               <img
                 src={avatar(buddy.name)}
                 alt={buddy.name}
                 className="mx-auto size-16 rounded-full border-4 border-[#161b29] bg-[#0f121b]"
               />
-              <h3 className="mt-6 text-center text-lg font-semibold text-white">{buddy.name}</h3>
-              <p className="mt-2 text-center text-sm text-white/70">{buddy.stats}</p>
-              <p className="mt-1 text-center text-xs uppercase tracking-[0.3em] text-[#00c7e5]">{buddy.events}</p>
+              <h3 className="mt-6 text-center text-lg font-semibold text-white">
+                {buddy.name}
+              </h3>
+              <p className="mt-2 text-center text-sm text-white/70">
+                {buddy.stats}
+              </p>
+              <p className="mt-1 text-center text-xs uppercase tracking-[0.3em] text-[#00c7e5]">
+                {buddy.events}
+              </p>
               <button
                 className={`mt-4 w-full rounded-full px-6 py-3 text-sm font-semibold uppercase tracking-[0.3em] ${
                   buddy.action === "View Profile"
@@ -153,18 +176,27 @@ export default function BuddyCommunity() {
         </section>
 
         <section className="space-y-6">
-          <h2 className="text-lg font-semibold text-[#00c7e5]">You might like to ride with...</h2>
+          <h2 className="text-lg font-semibold text-[#00c7e5]">
+            You might like to ride with...
+          </h2>
           <div className="grid gap-6 md:grid-cols-3">
             {suggestions.map((suggestion) => (
-              <article key={suggestion.name} className="rounded-3xl border border-white/8 bg-[#10131d] p-6 text-center shadow-[0_24px_60px_-34px_rgba(0,0,0,0.8)]">
+              <article
+                key={suggestion.name}
+                className="rounded-3xl border border-white/8 bg-[#10131d] p-6 text-center shadow-[0_24px_60px_-34px_rgba(0,0,0,0.8)]"
+              >
                 <img
                   src={avatar(suggestion.name)}
                   alt={suggestion.name}
                   className="mx-auto size-16 rounded-full border-4 border-[#161b29] bg-[#0f121b]"
                 />
-                <h3 className="mt-6 text-lg font-semibold text-white">{suggestion.name}</h3>
+                <h3 className="mt-6 text-lg font-semibold text-white">
+                  {suggestion.name}
+                </h3>
                 <p className="mt-2 text-sm text-white/70">{suggestion.stats}</p>
-                <p className="mt-1 text-xs uppercase tracking-[0.3em] text-[#00c7e5]">{suggestion.events}</p>
+                <p className="mt-1 text-xs uppercase tracking-[0.3em] text-[#00c7e5]">
+                  {suggestion.events}
+                </p>
                 <button
                   className={`mt-4 w-full rounded-full px-6 py-3 text-sm font-semibold uppercase tracking-[0.3em] ${
                     suggestion.action === "View Profile"
@@ -185,14 +217,22 @@ export default function BuddyCommunity() {
               <div className="rounded-full bg-[#00c7e5]/10 p-2 text-[#00c7e5]">
                 <Search className="size-4" />
               </div>
-              <h3 className="text-base font-semibold text-white">Recent Chats</h3>
+              <h3 className="text-base font-semibold text-white">
+                Recent Chats
+              </h3>
             </header>
             <ul className="mt-6 space-y-4">
               {chats.map((chat) => (
                 <li key={chat.name} className="flex items-center gap-3">
-                  <img src={avatar(chat.name)} alt={chat.name} className="size-10 rounded-full border-2 border-[#161b29]" />
+                  <img
+                    src={avatar(chat.name)}
+                    alt={chat.name}
+                    className="size-10 rounded-full border-2 border-[#161b29]"
+                  />
                   <div>
-                    <p className="text-sm font-semibold text-white">{chat.name}</p>
+                    <p className="text-sm font-semibold text-white">
+                      {chat.name}
+                    </p>
                     <p className="text-sm text-white/60">{chat.message}</p>
                   </div>
                 </li>
@@ -205,13 +245,22 @@ export default function BuddyCommunity() {
               <div className="rounded-full bg-[#00c7e5]/10 p-2 text-[#00c7e5]">
                 <SlidersHorizontal className="size-4" />
               </div>
-              <h3 className="text-base font-semibold text-white">Upcoming Group Rides</h3>
+              <h3 className="text-base font-semibold text-white">
+                Upcoming Group Rides
+              </h3>
             </header>
             <ul className="mt-6 space-y-4">
               {rides.map((ride) => (
-                <li key={ride.title} className="rounded-2xl border border-white/10 bg-[#0f121b] p-4">
-                  <p className="text-sm font-semibold text-white">{ride.title}</p>
-                  <p className="mt-2 text-xs uppercase tracking-[0.3em] text-white/50">{ride.schedule}</p>
+                <li
+                  key={ride.title}
+                  className="rounded-2xl border border-white/10 bg-[#0f121b] p-4"
+                >
+                  <p className="text-sm font-semibold text-white">
+                    {ride.title}
+                  </p>
+                  <p className="mt-2 text-xs uppercase tracking-[0.3em] text-white/50">
+                    {ride.schedule}
+                  </p>
                 </li>
               ))}
             </ul>
@@ -223,14 +272,42 @@ export default function BuddyCommunity() {
         <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-4 px-6 text-sm font-semibold uppercase tracking-[0.3em] text-[#0b0f17] md:flex-row">
           <div className="flex items-center gap-6">
             <span>FlowNation</span>
-            <a href="#support" className="hover:text-white/80">Support</a>
-            <a href="#legal" className="hover:text-white/80">Legal</a>
+            <a href="#support" className="hover:text-white/80">
+              Support
+            </a>
+            <a href="#legal" className="hover:text-white/80">
+              Legal
+            </a>
           </div>
           <div className="flex items-center gap-4 text-[#0b0f17]">
-            <a aria-label="Twitter" href="https://twitter.com" className="transition hover:text-white/80"><Twitter className="size-4" /></a>
-            <a aria-label="Instagram" href="https://instagram.com" className="transition hover:text-white/80"><Instagram className="size-4" /></a>
-            <a aria-label="LinkedIn" href="https://linkedin.com" className="transition hover:text-white/80"><Linkedin className="size-4" /></a>
-            <a aria-label="YouTube" href="https://youtube.com" className="transition hover:text-white/80"><Youtube className="size-4" /></a>
+            <a
+              aria-label="Twitter"
+              href="https://twitter.com"
+              className="transition hover:text-white/80"
+            >
+              <Twitter className="size-4" />
+            </a>
+            <a
+              aria-label="Instagram"
+              href="https://instagram.com"
+              className="transition hover:text-white/80"
+            >
+              <Instagram className="size-4" />
+            </a>
+            <a
+              aria-label="LinkedIn"
+              href="https://linkedin.com"
+              className="transition hover:text-white/80"
+            >
+              <Linkedin className="size-4" />
+            </a>
+            <a
+              aria-label="YouTube"
+              href="https://youtube.com"
+              className="transition hover:text-white/80"
+            >
+              <Youtube className="size-4" />
+            </a>
           </div>
         </div>
       </footer>

@@ -26,7 +26,9 @@ export function FlowNationShell({ children, className }: FlowNationShellProps) {
       return location.pathname === "/";
     }
 
-    return location.pathname === href || location.pathname.startsWith(`${href}/`);
+    return (
+      location.pathname === href || location.pathname.startsWith(`${href}/`)
+    );
   };
 
   return (
@@ -34,8 +36,12 @@ export function FlowNationShell({ children, className }: FlowNationShellProps) {
       <header className="border-b border-white/10 bg-gradient-to-r from-[#03b3d4] via-[#03c5d5] to-[#03d8c6]">
         <div className="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-4 px-6 py-4">
           <Link to="/" className="flex items-center gap-3 text-black">
-            <span className="rounded-full bg-white/30 px-3 py-1 text-xs font-bold uppercase tracking-[0.3em]">FN</span>
-            <span className="font-display text-xl font-semibold tracking-[0.2em]">FlowNation</span>
+            <span className="rounded-full bg-white/30 px-3 py-1 text-xs font-bold uppercase tracking-[0.3em]">
+              FN
+            </span>
+            <span className="font-display text-xl font-semibold tracking-[0.2em]">
+              FlowNation
+            </span>
           </Link>
           <nav className="flex flex-1 items-center justify-center gap-6 text-xs font-semibold uppercase tracking-[0.3em] text-black">
             {NAV_ITEMS.map((item) => (
@@ -44,7 +50,7 @@ export function FlowNationShell({ children, className }: FlowNationShellProps) {
                 to={item.href}
                 className={cn(
                   "transition",
-                  isActive(item.href) ? "text-white" : "hover:text-white"
+                  isActive(item.href) ? "text-white" : "hover:text-white",
                 )}
               >
                 {item.label}

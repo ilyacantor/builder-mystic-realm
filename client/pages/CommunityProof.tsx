@@ -53,10 +53,12 @@ export default function CommunityProof() {
       <main className="mx-auto flex max-w-6xl flex-col gap-20 px-6 py-16">
         <section className="space-y-6 text-center">
           <h1 className="text-4xl font-semibold sm:text-5xl">
-            A Thriving Community, <span className="text-[#708bff]">United</span> by Passion
+            A Thriving Community, <span className="text-[#708bff]">United</span>{" "}
+            by Passion
           </h1>
           <p className="mx-auto max-w-3xl text-base text-white/80">
-            Join thousands of athletes pushing their limits, sharing victories, and finding inspiration together.
+            Join thousands of athletes pushing their limits, sharing victories,
+            and finding inspiration together.
           </p>
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {stats.map((stat) => (
@@ -64,7 +66,9 @@ export default function CommunityProof() {
                 key={stat.label}
                 className="rounded-3xl border border-white/10 bg-[#0f121b] px-6 py-8 text-center"
               >
-                <p className="text-3xl font-semibold text-white">{stat.value}</p>
+                <p className="text-3xl font-semibold text-white">
+                  {stat.value}
+                </p>
                 <p className="mt-3 text-sm text-white/70">{stat.label}</p>
               </article>
             ))}
@@ -75,15 +79,23 @@ export default function CommunityProof() {
           <header className="space-y-2 text-center">
             <h2 className="text-3xl font-semibold">Voices of Our Community</h2>
             <p className="text-base text-white/70">
-              Hear from real athletes who have found their edge and their tribe with FlowNation.
+              Hear from real athletes who have found their edge and their tribe
+              with FlowNation.
             </p>
           </header>
           <div className="grid gap-6 md:grid-cols-2">
             {testimonials.map((testimonial) => (
-              <article key={testimonial.name} className="rounded-3xl border border-white/10 bg-[#0f121b] p-6">
-                <p className="text-base text-white/70">“{testimonial.quote}���</p>
+              <article
+                key={testimonial.name}
+                className="rounded-3xl border border-white/10 bg-[#0f121b] p-6"
+              >
+                <p className="text-base text-white/70">
+                  “{testimonial.quote}���
+                </p>
                 <div className="mt-6">
-                  <p className="text-sm font-semibold text-white">{testimonial.name}</p>
+                  <p className="text-sm font-semibold text-white">
+                    {testimonial.name}
+                  </p>
                   <span className="mt-2 inline-flex items-center rounded-full bg-[#2b2f43] px-3 py-1 text-xs font-semibold uppercase tracking-[0.3em] text-white/70">
                     {testimonial.role}
                   </span>
@@ -94,9 +106,12 @@ export default function CommunityProof() {
         </section>
 
         <section className="rounded-[2rem] border border-white/10 bg-gradient-to-r from-[#1c1f30] via-[#151826] to-[#10131d] px-10 py-12 text-center">
-          <h2 className="text-3xl font-semibold text-white">Ready to Find Your Flow?</h2>
+          <h2 className="text-3xl font-semibold text-white">
+            Ready to Find Your Flow?
+          </h2>
           <p className="mt-4 text-base text-white/70">
-            Unleash your potential and connect with a world of dedicated athletes.
+            Unleash your potential and connect with a world of dedicated
+            athletes.
           </p>
           <a
             href="/community"
@@ -109,7 +124,8 @@ export default function CommunityProof() {
 
         <section className="rounded-[2rem] border border-white/10 bg-[#0f121b] px-10 py-12 text-center">
           <p className="text-3xl font-semibold text-white">
-            Where Every <span className="text-[#6f89ff]">Stride</span>, Every <span className="text-[#ff7dbc]">Stroke</span>, Every
+            Where Every <span className="text-[#6f89ff]">Stride</span>, Every{" "}
+            <span className="text-[#ff7dbc]">Stroke</span>, Every
             <span className="text-[#ff7847]"> Climb</span> Fuels Your Greatness.
           </p>
         </section>
@@ -122,7 +138,9 @@ export default function CommunityProof() {
             <span>Resources</span>
             <span>Legal</span>
           </div>
-          <p className="text-xs uppercase tracking-[0.3em] text-white/40">© FlowNation. All rights reserved.</p>
+          <p className="text-xs uppercase tracking-[0.3em] text-white/40">
+            © FlowNation. All rights reserved.
+          </p>
         </div>
       </footer>
     </FlowNationShell>
