@@ -35,7 +35,7 @@ export function FlowNationShell({ children, className }: FlowNationShellProps) {
         <div className="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-4 px-6 py-4">
           <Link to="/" className="flex items-center gap-3 text-black">
             <span className="rounded-full bg-white/30 px-3 py-1 text-xs font-bold uppercase tracking-[0.3em]">FN</span>
-            <span className="font-display text-xl font-semibold tracking-[0.2em]">FlowNationUI</span>
+            <span className="font-display text-xl font-semibold tracking-[0.2em]">FlowNation</span>
           </Link>
           <nav className="flex flex-1 items-center justify-center gap-6 text-xs font-semibold uppercase tracking-[0.3em] text-black">
             {NAV_ITEMS.map((item) => (
