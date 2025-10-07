@@ -4,11 +4,10 @@ import { Bike, Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const NAV_ITEMS = [
-  { label: "Home", href: "#home" },
-  { label: "Guest Persona", href: "#persona" },
-  { label: "Dashboard", href: "#dashboard" },
+  { label: "Explore", href: "#home" },
+  { label: "My Dashboard", href: "#dashboard" },
   { label: "Community", href: "#community" },
-  { label: "Profile", href: "#profile" },
+  { label: "Shop", href: "#gear" },
 ];
 
 export const SiteHeader = () => {
