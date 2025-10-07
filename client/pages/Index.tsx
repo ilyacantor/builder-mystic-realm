@@ -1,325 +1,258 @@
 import { SiteLayout } from "@/components/layout/site-layout";
 import { Button } from "@/components/ui/button";
 import {
-  Bike,
-  CalendarDays,
-  ChevronRight,
-  Gauge,
-  MapPin,
+  CheckCircle2,
+  Mail,
   MessageCircle,
-  Route,
-  UsersRound,
+  SliderHorizontal,
 } from "lucide-react";
 
-const rideProfiles = [
+const colorTokens = [
+  { name: "Electric Cyan", hex: "#00BCC4" },
+  { name: "Bright Orange", hex: "#FF6F00" },
+  { name: "Deep Charcoal", hex: "#0D0F14" },
+  { name: "Graphite Gray", hex: "#202A2A" },
+  { name: "Primary Surface", hex: "#0B0C1A" },
+  { name: "Brand2nd Surface", hex: "#FF6F0A" },
+  { name: "Primary Card", hex: "#0B0C43" },
+  { name: "Brand2nd Card", hex: "#FF6F33" },
+];
+
+const typographyCards = [
   {
-    name: "Sarah Chen",
-    location: "Brooklyn, NY",
-    specialty: "Road Cyclist",
-    status: "Connect",
+    label: "H1 – Quicksand Bold 30px White",
+    title: "The FlowNation Journey",
+    description: "Expressive hero headlines that set the tone for every experience.",
   },
   {
-    name: "Miguel Ramirez",
-    location: "Austin, TX",
-    specialty: "Gravel Explorer",
-    status: "Request",
+    label: "H2 – Quicksand Semibold 24px Cyan",
+    title: "Discover Your Next Challenge",
+    description: "Section intros that energize athletes to explore further.",
   },
   {
-    name: "Emily White",
-    location: "Boulder, CO",
-    specialty: "Triathlete",
-    status: "Connect",
-  },
-  {
-    name: "David Jones",
-    location: "Portland, OR",
-    specialty: "Trail Runner",
-    status: "Invite",
+    label: "Body – Inter Regular 16px Light Gray",
+    title: "FlowNation connects endurance athletes with events, communities, and insights.",
+    description:
+      "Find your pace, track your progress, and join a vibrant network of peers. Secondary body text is ideal for detailed descriptions or captions.",
   },
 ];
 
-const eventCards = [
+const componentCards = [
   {
-    title: "Sunday Morning Group Ride",
-    location: "City Park, Anyplace",
-    date: "Sun, Apr 21 • 70 km",
-    cta: "View Details",
-    highlight: "Road",
+    title: "Buttons",
+    items: [
+      { label: "Primary Action", className: "bg-primary text-primary-foreground" },
+      { label: "Outline Action", className: "border border-white/15 bg-transparent text-foreground/80" },
+      { label: "Ghost Action", className: "bg-transparent text-foreground/70" },
+      { label: "Accent Action", className: "bg-accent text-accent-foreground" },
+    ],
   },
   {
-    title: "Spring Triathlon Challenge",
-    location: "Lakeside Recreation Area",
-    date: "Sat, May 04 • 1.5 km swim",
-    cta: "Register",
-    highlight: "Triathlon",
+    title: "Cards",
+    items: [
+      { label: "Event Highlight", description: "Join us for the Annual Triathlon Challenge on October 28th. Sign up now!" },
+    ],
   },
   {
-    title: "Gravel Grinder Classic",
-    location: "Wyoming Pines Forest",
-    date: "Sat, May 18 • 110 km",
-    cta: "Register",
-    highlight: "Gravel",
+    title: "Form Elements",
+    elements: [
+      { placeholder: "Email Address" },
+      { placeholder: "Your message here...", multiline: true },
+      { placeholder: "Select a sport" },
+    ],
   },
   {
-    title: "Coastal Century Ride",
-    location: "Oceanfront Loop",
-    date: "Sun, Jun 02 • 160 km",
-    cta: "View Details",
-    highlight: "Road",
-  },
-];
-
-const gearReviews = [
-  {
-    title: "Road Cycling Shoes ‘Speedster X’",
-    summary:
-      "Unbeatable power transfer and comfort for long-distance rides. Perfect for road warriors."
+    title: "Checkbox & Radio",
+    checklist: ["Accept terms and conditions", "Option One", "Option Two"],
   },
   {
-    title: "Triathlon Watch ‘Endurance Pro’",
-    summary:
-      "Advanced metrics and long battery life for multisport athletes. Seamless water transitions."
+    title: "Tags & Badges",
+    tags: [
+      { label: "Running", variant: "cyan" },
+      { label: "Cycling", variant: "cyan" },
+      { label: "Triathlon", variant: "cyan" },
+      { label: "Urgent", variant: "orange" },
+      { label: "New Event", variant: "orange" },
+      { label: "Featured", variant: "orange" },
+    ],
   },
   {
-    title: "Aero Road Jersey ‘Velocity’",
-    summary:
-      "Designed for speed, efficient aerodynamics, and premium moisture control for every ride."
+    title: "Toggles & Slider",
+    toggles: [
+      { label: "Dark Mode", active: true },
+      { label: "Distance Preference: 50 km", slider: true },
+    ],
   },
-];
-
-const activityFeed = [
-  "Sarah just completed a 100km road ride!",
-  "New event: Mountain Epic added near you!",
-  "Kim joined the Morning Runner group.",
-  "FlowNation now supports custom routes!",
-];
-
-const integrations = [
-  { label: "Strava", status: "Connected" },
-  { label: "Garmin Connect", status: "Connected" },
-  { label: "Zwift", status: "Disconnected" },
 ];
 
 export default function Index() {
   return (
     <SiteLayout>
-      <div className="space-y-24 pb-20">
-        <section id="home" className="relative overflow-hidden rounded-[36px] border border-white/5 bg-secondary/70 px-6 py-12 shadow-card-soft backdrop-blur-xl sm:px-12">
-          <div className="absolute inset-0 -z-10 bg-[linear-gradient(135deg,rgba(0,188,212,0.22),rgba(10,10,10,0.6)),radial-gradient(circle_at_top_right,rgba(255,127,17,0.18),transparent_60%)]" />
-          <div className="flex flex-col gap-10 lg:flex-row lg:items-center lg:justify-between">
-            <div className="max-w-xl space-y-6">
-              <span className="inline-flex items-center gap-2 rounded-full bg-primary/15 px-4 py-1 text-xs font-semibold uppercase tracking-[0.4em] text-primary">
-                FlowNation
-              </span>
-              <h1 className="font-display text-4xl leading-tight text-white sm:text-5xl">
-                Welcome to Your Personalized FlowNation Experience
-              </h1>
-              <p className="text-lg text-foreground/75">
-                Discover the best paved routes, join spirited group rides, and track your performance with precision. FlowNation connects you to a vibrant community passionate about the open road.
-              </p>
-              <div className="flex flex-wrap gap-3 text-sm font-semibold uppercase tracking-[0.3em]">
-                {[("Road"), ("Gravel"), ("Triathlete")].map((label, index) => (
-                  <button
-                    key={label}
-                    type="button"
-                    className={`rounded-full border border-white/10 px-5 py-2 transition ${
-                      index === 0 ? "bg-primary text-primary-foreground" : "bg-background/40 text-foreground/70 hover:border-primary/40 hover:text-white"
-                    }`}
-                  >
-                    {label}
-                  </button>
-                ))}
-              </div>
-            </div>
-            <div
-              id="dashboard"
-              className="grid w-full max-w-md gap-4 rounded-[28px] border border-white/5 bg-background/70 p-6 text-sm text-foreground/70"
-            >
-              <div className="flex items-center justify-between rounded-2xl border border-white/5 bg-secondary/70 px-4 py-3">
-                <div>
-                  <p className="text-xs uppercase tracking-[0.35em] text-foreground/50">Today&apos;s Focus</p>
-                  <p className="mt-1 text-base font-semibold text-white">Recovery Ride</p>
-                </div>
-                <div className="flex items-center gap-2 text-xs uppercase tracking-[0.3em] text-primary">
-                  <Gauge className="size-4" /> Moderate
-                </div>
-              </div>
-              <div className="grid gap-3">
-                <div className="rounded-2xl border border-white/5 bg-secondary/70 px-4 py-3">
-                  <p className="flex items-center gap-2 text-xs uppercase tracking-[0.3em] text-foreground/50">
-                    <Bike className="size-4 text-primary" /> Weekly Distance
-                  </p>
-                  <p className="mt-2 text-xl font-semibold text-white">210 km</p>
-                </div>
-                <div className="rounded-2xl border border-white/5 bg-secondary/70 px-4 py-3">
-                  <p className="flex items-center gap-2 text-xs uppercase tracking-[0.3em] text-foreground/50">
-                    <UsersRound className="size-4 text-primary" /> Group Rides
-                  </p>
-                  <p className="mt-2 text-xl font-semibold text-white">3 Events</p>
-                </div>
-                <div className="rounded-2xl border border-white/5 bg-secondary/70 px-4 py-3">
-                  <p className="flex items-center gap-2 text-xs uppercase tracking-[0.3em] text-foreground/50">
-                    <CalendarDays className="size-4 text-primary" /> Next Challenge
-                  </p>
-                  <p className="mt-2 text-xl font-semibold text-white">Coastal Century • Jun 02</p>
-                </div>
-              </div>
-              <Button className="w-full bg-primary text-xs font-semibold uppercase tracking-[0.3em] text-primary-foreground hover:bg-primary/90">
-                View Dashboard
-              </Button>
-            </div>
-          </div>
-          <div className="mt-10 flex flex-wrap items-center gap-4 rounded-2xl border border-white/10 bg-background/60 px-4 py-3 text-sm text-foreground/70">
-            {activityFeed.map((item, index) => (
-              <div key={item} className="flex items-center gap-2">
-                <span className="rounded-full bg-primary/20 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-[0.3em] text-primary">{index + 1}</span>
-                <p>{item}</p>
-              </div>
-            ))}
-          </div>
-        </section>
+      <section id="hero" className="container">
+        <div className="rounded-xl bg-hero-panel p-12 text-center shadow-card-elevated md:rounded-[2.5rem] md:p-16">
+          <p className="text-xs font-semibold uppercase tracking-[0.35em] text-primary-foreground/80">
+            FlowNation UI
+          </p>
+          <h1 className="mt-6 font-display text-4xl text-white sm:text-5xl">Design System</h1>
+          <p className="mx-auto mt-6 max-w-2xl text-base text-foreground/70 sm:text-lg">
+            The foundational elements and components that power FlowNation UI. A consistent visual language for a seamless experience.
+          </p>
+        </div>
+      </section>
 
-        <section id="local" className="space-y-10">
-          <div className="flex flex-col gap-6 rounded-[36px] border border-white/5 bg-secondary/70 p-8 shadow-card-soft backdrop-blur-xl">
-            <div className="flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
-              <div>
-                <p className="text-xs uppercase tracking-[0.4em] text-primary">Local Scene</p>
-                <h2 className="mt-2 font-display text-3xl text-white">Discover rides tailored to your terrain.</h2>
-              </div>
-              <div className="flex gap-2 text-xs font-semibold uppercase tracking-[0.3em] text-foreground/60">
-                <button type="button" className="rounded-full border border-primary bg-primary/20 px-4 py-1 text-primary">
-                  Nearby
-                </button>
-                <button type="button" className="rounded-full border border-white/10 px-4 py-1 hover:border-primary/40 hover:text-white">
-                  Upcoming
-                </button>
-              </div>
+      <section id="colors" className="container mt-24 space-y-10 text-center">
+        <div className="space-y-4">
+          <h2 className="font-display text-3xl text-primary sm:text-4xl">Color Tokens</h2>
+          <p className="mx-auto max-w-2xl text-sm text-foreground/70">
+            Our core brand colors and their semantic usage across the application, ensuring visual consistency and impact.
+          </p>
+        </div>
+        <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-4">
+          {colorTokens.map((token) => (
+            <div key={token.name} className="rounded-xl border border-white/10 bg-secondary/70 p-6 text-left shadow-card-soft">
+              <div className="size-16 rounded-full" style={{ backgroundColor: token.hex }} />
+              <p className="mt-6 text-sm font-semibold text-white">{token.name}</p>
+              <p className="text-xs uppercase tracking-[0.3em] text-foreground/50">{token.hex}</p>
             </div>
-            <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-4">
-              {eventCards.map((event) => (
-                <article key={event.title} className="flex h-full flex-col justify-between rounded-[28px] border border-white/10 bg-background/70 p-6 text-sm text-foreground/70">
-                  <div className="space-y-3">
-                    <span className="inline-flex items-center gap-2 text-xs uppercase tracking-[0.3em] text-primary">
-                      <Route className="size-4" /> {event.highlight}
-                    </span>
-                    <h3 className="font-display text-xl text-white">{event.title}</h3>
-                    <p className="flex items-center gap-2 text-xs uppercase tracking-[0.3em] text-foreground/50">
-                      <MapPin className="size-4" /> {event.location}
-                    </p>
-                    <p className="flex items-center gap-2 text-xs uppercase tracking-[0.3em] text-foreground/50">
-                      <CalendarDays className="size-4" /> {event.date}
-                    </p>
-                  </div>
-                  <Button
-                    variant={event.cta === "Register" ? "default" : "ghost"}
-                    className={`mt-6 w-full text-xs uppercase tracking-[0.3em] ${
-                      event.cta === "Register"
-                        ? "bg-primary text-primary-foreground hover:bg-primary/90"
-                        : "border border-white/10 bg-transparent text-foreground/80 hover:border-primary/40 hover:text-white"
-                    }`}
-                  >
-                    {event.cta}
-                  </Button>
-                </article>
-              ))}
-            </div>
-          </div>
-        </section>
+          ))}
+        </div>
+      </section>
 
-        <section id="community" className="grid gap-6 lg:grid-cols-[0.8fr_1.2fr]">
-          <div className="rounded-[36px] border border-white/5 bg-secondary/70 p-8 shadow-card-soft backdrop-blur-xl">
-            <div className="flex items-center justify-between">
-              <div>
-                <p className="text-xs uppercase tracking-[0.4em] text-primary">Connect with Your Tribe</p>
-                <h2 className="mt-2 font-display text-2xl text-white">Meet athletes who match your energy.</h2>
-              </div>
-              <Button variant="ghost" className="border border-white/10 bg-background/60 text-xs uppercase tracking-[0.3em] text-foreground/70 hover:border-primary/40 hover:bg-primary/10 hover:text-white">
-                <MessageCircle className="mr-2 size-4" /> Start Chat
-              </Button>
-            </div>
-            <div className="mt-6 space-y-4">
-              {rideProfiles.map((profile) => (
-                <div key={profile.name} className="flex items-center justify-between rounded-[24px] border border-white/10 bg-background/70 px-4 py-3 text-sm text-foreground/70">
-                  <div>
-                    <p className="text-base font-semibold text-white">{profile.name}</p>
-                    <p className="text-xs uppercase tracking-[0.3em] text-foreground/50">{profile.location}</p>
-                    <p className="text-xs uppercase tracking-[0.3em] text-foreground/50">{profile.specialty}</p>
-                  </div>
-                  <Button
-                    variant="ghost"
-                    className="border border-white/10 bg-transparent text-xs uppercase tracking-[0.3em] text-foreground/70 hover:border-primary/40 hover:bg-primary/10 hover:text-white"
-                  >
-                    {profile.status}
-                  </Button>
-                </div>
-              ))}
-            </div>
-          </div>
-          <div className="grid gap-6">
-            <div className="rounded-[36px] border border-white/5 bg-secondary/70 p-8 shadow-card-soft backdrop-blur-xl">
-              <p className="text-xs uppercase tracking-[0.4em] text-primary">Gear & Reviews</p>
-              <div className="mt-4 space-y-4">
-                {gearReviews.map((gear) => (
-                  <article key={gear.title} className="rounded-[24px] border border-white/10 bg-background/70 p-5 text-sm text-foreground/70">
-                    <h3 className="font-display text-xl text-white">{gear.title}</h3>
-                    <p className="mt-2 text-foreground/70">{gear.summary}</p>
-                    <Button variant="ghost" className="mt-4 inline-flex items-center gap-2 border border-white/10 bg-transparent text-xs uppercase tracking-[0.3em] text-foreground/70 hover:border-primary/40 hover:text-white">
-                      Read Review
-                      <ChevronRight className="size-4" />
-                    </Button>
-                  </article>
-                ))}
-              </div>
-            </div>
-            <div id="gear" className="rounded-[36px] border border-white/5 bg-secondary/70 p-8 shadow-card-soft backdrop-blur-xl">
-              <p className="text-xs uppercase tracking-[0.4em] text-primary">Training Integrations</p>
-              <div className="mt-4 space-y-3">
-                {integrations.map((integration) => (
-                  <div key={integration.label} className="flex items-center justify-between rounded-[24px] border border-white/10 bg-background/70 px-4 py-3 text-sm text-foreground/70">
-                    <span>{integration.label}</span>
+      <section id="typography" className="container mt-24 space-y-10 text-center">
+        <div className="space-y-4">
+          <h2 className="font-display text-3xl text-primary sm:text-4xl">Typography</h2>
+          <p className="mx-auto max-w-2xl text-sm text-foreground/70">
+            Our typefaces and their hierarchical application for headings and body text, ensuring readability and brand personality.
+          </p>
+        </div>
+        <div className="grid gap-6 md:grid-cols-3">
+          {typographyCards.map((card) => (
+            <article key={card.label} className="h-full rounded-xl border border-white/10 bg-secondary/70 p-8 text-left shadow-card-soft">
+              <p className="text-xs uppercase tracking-[0.35em] text-foreground/50">{card.label}</p>
+              <h3 className="mt-4 font-display text-2xl text-white">{card.title}</h3>
+              <p className="mt-4 text-sm text-foreground/70">{card.description}</p>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section id="components" className="container mt-24 space-y-10 text-center">
+        <div className="space-y-4">
+          <h2 className="font-display text-3xl text-primary sm:text-4xl">Components</h2>
+          <p className="mx-auto max-w-2xl text-sm text-foreground/70">
+            Interactive elements and structural building blocks for dynamic and user-friendly interfaces.
+          </p>
+        </div>
+        <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+          {componentCards.map((card) => (
+            <article key={card.title} className="rounded-xl border border-white/10 bg-secondary/70 p-8 text-left shadow-card-soft">
+              <h3 className="font-display text-xl text-white">{card.title}</h3>
+              {card.items ? (
+                <div className="mt-6 flex flex-wrap gap-3">
+                  {card.items.map((item) => (
                     <span
-                      className={`rounded-full px-3 py-1 text-xs uppercase tracking-[0.3em] ${
-                        integration.status === "Connected"
-                          ? "bg-primary/15 text-primary"
-                          : "bg-accent/15 text-accent"
+                      key={item.label}
+                      className={`inline-flex items-center gap-2 rounded-full px-4 py-2 text-xs font-semibold uppercase tracking-[0.35em] ${item.className}`}
+                    >
+                      {item.label}
+                    </span>
+                  ))}
+                </div>
+              ) : null}
+              {card.elements ? (
+                <div className="mt-6 space-y-3 text-sm text-foreground/70">
+                  {card.elements.map((element, index) => (
+                    <div key={`${card.title}-${element.placeholder}-${index}`} className="rounded-lg border border-white/10 bg-background/80 px-4 py-3">
+                      {element.multiline ? (
+                        <p className="text-left text-foreground/50">{element.placeholder}</p>
+                      ) : (
+                        <p className="text-left text-foreground/60">{element.placeholder}</p>
+                      )}
+                    </div>
+                  ))}
+                </div>
+              ) : null}
+              {card.checklist ? (
+                <ul className="mt-6 space-y-3 text-left text-sm text-foreground/70">
+                  {card.checklist.map((item) => (
+                    <li key={item} className="flex items-center gap-3">
+                      <CheckCircle2 className="size-4 text-primary" />
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              ) : null}
+              {card.tags ? (
+                <div className="mt-6 flex flex-wrap gap-2">
+                  {card.tags.map((tag) => (
+                    <span
+                      key={tag.label}
+                      className={`rounded-full px-3 py-1 text-xs font-semibold uppercase tracking-[0.35em] ${
+                        tag.variant === "cyan"
+                          ? "bg-primary/20 text-primary"
+                          : "bg-accent/20 text-accent"
                       }`}
                     >
-                      {integration.status}
+                      {tag.label}
                     </span>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </section>
+                  ))}
+                </div>
+              ) : null}
+              {card.toggles ? (
+                <div className="mt-6 space-y-4 text-left text-sm text-foreground/70">
+                  {card.toggles.map((toggle) => (
+                    <div key={toggle.label} className="flex items-center justify-between rounded-lg border border-white/10 bg-background/80 px-4 py-3">
+                      <span>{toggle.label}</span>
+                      {toggle.slider ? (
+                        <div className="relative h-1 w-32 rounded-full bg-white/10">
+                          <div className="absolute inset-y-0 left-0 h-full w-3/4 rounded-full bg-primary" />
+                          <div className="absolute -top-1.5 left-3/4 h-4 w-4 rounded-full bg-primary" />
+                        </div>
+                      ) : (
+                        <span className="flex h-6 w-12 items-center rounded-full bg-primary/30">
+                          <span className="ml-auto mr-1 inline-block size-4 rounded-full bg-primary" />
+                        </span>
+                      )}
+                    </div>
+                  ))}
+                </div>
+              ) : null}
+            </article>
+          ))}
+        </div>
+      </section>
 
-        <section id="cta" className="overflow-hidden rounded-[36px] border border-white/5 bg-gradient-to-br from-primary/15 via-background to-background p-12 text-center shadow-card-soft backdrop-blur-xl">
-          <h2 className="font-display text-3xl text-white sm:text-4xl">Join the FlowNation Community Today!</h2>
-          <p className="mt-4 text-base text-foreground/70">
-            Unlock your full potential, connect with athletes worldwide, and achieve your goals with FlowNation&apos;s personalized experience.
+      <section className="container mt-24">
+        <div className="rounded-xl border border-white/10 bg-secondary/70 p-10 text-left shadow-card-soft">
+          <h2 className="font-display text-2xl text-white">Keep Building with FlowNation</h2>
+          <p className="mt-4 max-w-2xl text-sm text-foreground/70">
+            Use these tokens and components across every page for visual harmony. Combine brand surfaces, interactive states, and purposeful typography to deliver elite experiences for every athlete.
           </p>
-          <form className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
-            <input
-              type="text"
-              name="name"
-              placeholder="Your Name"
-              className="h-12 w-full rounded-full border border-white/10 bg-background/70 px-6 text-sm text-foreground/80 placeholder:text-foreground/40 focus:border-primary/60 focus:outline-none focus:ring-2 focus:ring-primary/40 sm:w-64"
-            />
-            <input
-              type="email"
-              name="email"
-              placeholder="Your Email"
-              className="h-12 w-full rounded-full border border-white/10 bg-background/70 px-6 text-sm text-foreground/80 placeholder:text-foreground/40 focus:border-primary/60 focus:outline-none focus:ring-2 focus:ring-primary/40 sm:w-72"
-            />
-            <Button className="h-12 rounded-full bg-primary px-8 text-sm font-semibold uppercase tracking-[0.3em] text-primary-foreground hover:bg-primary/90">
-              Join FlowNation
+          <div className="mt-6 flex flex-wrap gap-3">
+            <Button className="rounded-full bg-primary px-6 text-xs font-semibold uppercase tracking-[0.35em] text-primary-foreground hover:bg-primary/90">
+              Download kit
             </Button>
-          </form>
-          <p className="mt-3 text-xs uppercase tracking-[0.3em] text-foreground/50">
-            Trusted by thousands of athletes worldwide.
-          </p>
-        </section>
-      </div>
+            <Button
+              variant="ghost"
+              className="rounded-full border border-white/10 bg-transparent px-6 text-xs font-semibold uppercase tracking-[0.35em] text-foreground/70 hover:border-primary/40 hover:text-white"
+            >
+              <MessageCircle className="mr-2 size-4" /> Contact team
+            </Button>
+            <Button
+              variant="ghost"
+              className="rounded-full border border-white/10 bg-transparent px-6 text-xs font-semibold uppercase tracking-[0.35em] text-foreground/70 hover:border-primary/40 hover:text-white"
+            >
+              <Mail className="mr-2 size-4" /> Subscribe updates
+            </Button>
+            <Button
+              variant="ghost"
+              className="rounded-full border border-white/10 bg-transparent px-6 text-xs font-semibold uppercase tracking-[0.35em] text-foreground/70 hover:border-primary/40 hover:text-white"
+            >
+              <SliderHorizontal className="mr-2 size-4" /> View guidelines
+            </Button>
+          </div>
+        </div>
+      </section>
     </SiteLayout>
   );
 }
