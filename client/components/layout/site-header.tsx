@@ -50,7 +50,7 @@ export const SiteHeader = () => {
             size="sm"
             className="border border-white/10 bg-secondary/40 px-5 text-xs uppercase tracking-[0.35em] text-foreground/70 transition hover:border-primary/60 hover:bg-primary/10 hover:text-white"
           >
-            <a href="mailto:hello@flownation.app">Login</a>
+            <a href="#profile">Login</a>
           </Button>
           <Button
             asChild
