@@ -83,41 +83,26 @@ export default function DashboardInsights() {
       </header>
 
       <main className="mx-auto flex max-w-6xl flex-col gap-10 px-6 py-12">
-        <section className="grid gap-6 lg:grid-cols-[1.5fr_1fr]">
-          <article className="rounded-[2rem] border border-white/10 bg-[#10131d] p-8">
-            <div className="flex items-center gap-4">
-              <img
-                src="https://api.dicebear.com/7.x/thumbs/svg?seed=Alex"
-                alt="Alex"
-                className="size-20 rounded-full border-4 border-[#161b29]"
-              />
-              <div>
-                <h1 className="text-3xl font-semibold text-white">Alex</h1>
-                <p className="text-sm text-white/70">Functional Threshold Power</p>
+        <section className="rounded-[2rem] border border-white/10 bg-[#10131d] p-8">
+          <div className="flex items-center gap-4">
+            <img
+              src="https://api.dicebear.com/7.x/thumbs/svg?seed=Alex"
+              alt="Alex"
+              className="size-20 rounded-full border-4 border-[#161b29]"
+            />
+            <div>
+              <h1 className="text-3xl font-semibold text-white">Alex</h1>
+              <p className="text-sm text-white/70">Functional Threshold Power</p>
+            </div>
+          </div>
+          <div className="mt-8 grid gap-4 sm:grid-cols-3">
+            {metrics.map((metric) => (
+              <div key={metric.label} className="rounded-2xl border border-white/10 bg-[#0f121b] px-4 py-6 text-center">
+                <p className="text-2xl font-semibold text-white">{metric.value}</p>
+                <p className="mt-2 text-xs uppercase tracking-[0.3em] text-white/60">{metric.label}</p>
               </div>
-            </div>
-            <div className="mt-8 grid gap-4 sm:grid-cols-3">
-              {metrics.map((metric) => (
-                <div key={metric.label} className="rounded-2xl border border-white/10 bg-[#0f121b] px-4 py-6 text-center">
-                  <p className="text-2xl font-semibold text-white">{metric.value}</p>
-                  <p className="mt-2 text-xs uppercase tracking-[0.3em] text-white/60">{metric.label}</p>
-                </div>
-              ))}
-            </div>
-          </article>
-          <article className="rounded-[2rem] border border-white/10 bg-[#10131d] p-8">
-            <h2 className="text-base font-semibold text-white">Badges & Achievements</h2>
-            <div className="mt-6 flex flex-wrap gap-3">
-              {badges.map((badge) => (
-                <span
-                  key={badge}
-                  className="rounded-full bg-[#ff6f00] px-4 py-2 text-xs font-semibold uppercase tracking-[0.3em] text-black"
-                >
-                  {badge}
-                </span>
-              ))}
-            </div>
-          </article>
+            ))}
+          </div>
         </section>
 
         <section className="grid gap-6 lg:grid-cols-2">
@@ -162,6 +147,40 @@ export default function DashboardInsights() {
 
         <section className="grid gap-6 lg:grid-cols-2">
           <article className="rounded-[2rem] border border-white/10 bg-[#10131d] p-8">
+            <h2 className="text-base font-semibold text-white">Weekly Mileage</h2>
+            <div className="mt-8 flex h-56 items-end justify-between">
+              {mileage.map((value, index) => (
+                <div key={mileageLabels[index]} className="flex w-full flex-col items-center">
+                  <div className="relative flex h-full w-full items-end justify-center">
+                    <div
+                      className="w-12 rounded-t-full bg-gradient-to-t from-[#03d8c6] to-[#03b3d4]"
+                      style={{ height: `${(value / Math.max(...mileage)) * 100}%` }}
+                    />
+                  </div>
+                  <p className="mt-3 text-xs uppercase tracking-[0.3em] text-white/50">{mileageLabels[index]}</p>
+                </div>
+              ))}
+            </div>
+          </article>
+
+          <article className="rounded-[2rem] border border-white/10 bg-[#10131d] p-8">
+            <h2 className="text-base font-semibold text-white">Average Power Trend</h2>
+            <div className="mt-8 grid h-56 grid-cols-5 items-end gap-4">
+              {power.map((value, index) => (
+                <div key={powerLabels[index]} className="flex flex-col items-center">
+                  <div
+                    className="w-full rounded-t-xl bg-[#ff6f00]"
+                    style={{ height: `${(value / Math.max(...power)) * 100}%` }}
+                  />
+                  <p className="mt-3 text-xs uppercase tracking-[0.3em] text-white/50">{powerLabels[index]}</p>
+                </div>
+              ))}
+            </div>
+          </article>
+        </section>
+
+        <section className="grid gap-6 lg:grid-cols-2">
+          <article className="rounded-[2rem] border border-white/10 bg-[#10131d] p-8">
             <h2 className="text-base font-semibold text-white">Recent Event Results</h2>
             <div className="mt-6 space-y-4">
               {events.map((event) => (
@@ -179,17 +198,16 @@ export default function DashboardInsights() {
           </article>
 
           <article className="rounded-[2rem] border border-white/10 bg-[#10131d] p-8">
-            <h2 className="text-base font-semibold text-white">Highlights</h2>
-            <div className="mt-6 grid gap-4">
-              <div className="rounded-2xl border border-white/10 bg-[#0f121b] px-4 py-4 text-sm text-white/70">
-                Sunrise Century Ride — 4h 32m finish time with steady tempo pacing.
-              </div>
-              <div className="rounded-2xl border border-white/10 bg-[#0f121b] px-4 py-4 text-sm text-white/70">
-                Triathlon training block completed with improved swim and run efficiency.
-              </div>
-              <div className="rounded-2xl border border-white/10 bg-[#0f121b] px-4 py-4 text-sm text-white/70">
-                New personal best on gravel segment during Mountain Gravel Race.
-              </div>
+            <h2 className="text-base font-semibold text-white">Badges & Achievements</h2>
+            <div className="mt-6 flex flex-wrap gap-3">
+              {badges.map((badge) => (
+                <span
+                  key={badge}
+                  className="rounded-full bg-[#ff6f00] px-4 py-2 text-xs font-semibold uppercase tracking-[0.3em] text-black"
+                >
+                  {badge}
+                </span>
+              ))}
             </div>
           </article>
         </section>
